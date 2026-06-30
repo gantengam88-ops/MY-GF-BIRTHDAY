@@ -1,29 +1,26 @@
-const btn =
-document.getElementById(
-"giftBtn"
-);
+const btn = document.getElementById("giftBtn");
 
-btn.onclick=()=>{
+btn.addEventListener("click", () => {
 
-document
-.querySelector(
-".hero"
-)
-.innerHTML=`
+const hero =
+document.querySelector(".hero");
 
-<div class="card">
+hero.style.animation =
+"fadeOut .8s forwards";
 
-<div class="mail">
+setTimeout(()=>{
 
+hero.innerHTML=`
+
+<div class="gift">
+
+<div class="envelope">
 💌
-
 </div>
 
-<h2>
+<div class="letter">
 
-Untuk Kamu ❤️
-
-</h2>
+<h2>Untuk Kamu ❤️</h2>
 
 <p>
 
@@ -33,15 +30,35 @@ Selamat ulang tahun.
 
 Terima kasih sudah hadir.
 
-Semoga tahun ini
-lebih bahagia,
-lebih seru,
-dan penuh hal baik ✨
+Semoga semua hal baik
+datang ke kamu ✨
 
 </p>
 
 </div>
 
+</div>
+
 `;
 
-};
+const env =
+document.querySelector(".envelope");
+
+const letter =
+document.querySelector(".letter");
+
+setTimeout(()=>{
+
+env.classList.add("open");
+
+},500);
+
+setTimeout(()=>{
+
+letter.classList.add("show");
+
+},1600);
+
+},800);
+
+});
