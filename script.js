@@ -1,14 +1,13 @@
-const btn =
-document.getElementById("giftBtn");
+const btn = document.getElementById("giftBtn");
 
-btn.onclick=()=>{
+btn.addEventListener("click", () => {
 
-const hero=
+const hero =
 document.querySelector(".hero");
 
-hero.innerHTML=`
+hero.innerHTML = `
 
-<div class="scene">
+<div class="gift-scene">
 
 <div class="envelope">
 💌
@@ -24,14 +23,14 @@ Selamat ulang tahun.
 
 <br><br>
 
-Makasih sudah hadir,
+Terima kasih sudah hadir,
 nemenin, dan jadi bagian
 dari banyak cerita indah.
 
 <br><br>
 
-Semoga semua hal baik
-datang ke kamu ✨
+Semoga tahun ini penuh
+hal baik ✨
 
 </p>
 
@@ -45,10 +44,9 @@ setTimeout(()=>{
 
 document
 .querySelector(".envelope")
-.style.transform=
-"translateY(-120px) scale(1.2)";
+.classList.add("open");
 
-},800);
+},1000);
 
 setTimeout(()=>{
 
@@ -56,35 +54,6 @@ document
 .querySelector(".letter")
 .classList.remove("hidden");
 
-startHearts();
+},2200);
 
-},1800);
-
-};
-
-function startHearts(){
-
-setInterval(()=>{
-
-const h=
-document.createElement("div");
-
-h.className=
-"heart";
-
-h.innerHTML=
-"💖";
-
-h.style.left=
-Math.random()*100+"vw";
-
-document.body.appendChild(h);
-
-setTimeout(
-()=>h.remove(),
-6000
-);
-
-},350);
-
-}
+});
