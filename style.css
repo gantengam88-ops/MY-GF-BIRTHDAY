@@ -9,13 +9,13 @@ body{
 
 height:100vh;
 
+overflow:hidden;
+
 display:flex;
 
 justify-content:center;
 
 align-items:center;
-
-overflow:hidden;
 
 background:
 linear-gradient(
@@ -41,7 +41,10 @@ transparent 1px
 background-size:
 90px 90px;
 
-opacity:.4;
+opacity:.35;
+
+animation:
+blink 5s infinite;
 
 }
 
@@ -49,9 +52,19 @@ opacity:.4;
 
 text-align:center;
 
+padding:20px;
+
 z-index:2;
 
-padding:20px;
+width:100%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
 
 }
 
@@ -66,15 +79,15 @@ float 3s infinite;
 
 h1{
 
-color:#ff5a96;
-
 font-size:52px;
 
 margin-top:20px;
 
+color:#ff5a96;
+
 }
 
-p{
+.hero p{
 
 margin-top:20px;
 
@@ -86,8 +99,7 @@ button{
 
 margin-top:30px;
 
-padding:
-18px 45px;
+padding:18px 45px;
 
 border:none;
 
@@ -109,7 +121,7 @@ background:white;
 
 padding:50px;
 
-width:560px;
+width:600px;
 
 max-width:92%;
 
@@ -117,12 +129,12 @@ border-radius:35px;
 
 text-align:center;
 
-animation:
-popup .7s;
-
 box-shadow:
-0 20px 60px
-rgba(0,0,0,.1);
+0 25px 80px
+rgba(255,120,170,.2);
+
+animation:
+show .7s;
 
 }
 
@@ -130,7 +142,8 @@ rgba(0,0,0,.1);
 
 font-size:90px;
 
-margin-bottom:20px;
+animation:
+bounce 1s;
 
 }
 
@@ -138,7 +151,7 @@ margin-bottom:20px;
 
 color:#ff5a96;
 
-margin-bottom:25px;
+margin-bottom:20px;
 
 }
 
@@ -146,9 +159,11 @@ margin-bottom:25px;
 
 line-height:2;
 
+color:#666;
+
 }
 
-@keyframes popup{
+@keyframes show{
 
 from{
 
@@ -170,12 +185,33 @@ translateY(0);
 
 }
 
+@keyframes bounce{
+
+50%{
+
+transform:
+scale(1.2);
+
+}
+
+}
+
 @keyframes float{
 
 50%{
 
 transform:
 translateY(-10px);
+
+}
+
+}
+
+@keyframes blink{
+
+50%{
+
+opacity:.7;
 
 }
 
