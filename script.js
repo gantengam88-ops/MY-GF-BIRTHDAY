@@ -1,18 +1,11 @@
-const btn =
-document.getElementById(
-"giftBtn"
-);
+const btn = document.getElementById("giftBtn");
 
-btn.onclick=()=>{
+btn.onclick = function () {
 
-const hero=
-document.querySelector(
-".hero"
-);
+const hero =
+document.querySelector(".hero");
 
-hero.classList.add(
-"open"
-);
+hero.classList.add("open");
 
 setTimeout(()=>{
 
@@ -25,53 +18,52 @@ hero.innerHTML=`
 </div>
 
 <h2>
-
 Untuk Kamu ❤️
-
 </h2>
 
 <p id="typing"></p>
 
-<button
-id="next"
-style="display:none">
-
+<button id="next">
 Lanjut →
-
 </button>
 
 </div>
 
 `;
 
-hero.classList.remove(
-"open"
-);
-
-const text=
-
-`Selamat ulang tahun ❤️
+let text = `
+Selamat ulang tahun ❤️
 
 Terima kasih sudah hadir.
 
-Semoga tahun ini penuh bahagia ✨`;
+Semoga tahun ini
+lebih bahagia ✨
+`;
 
-let i=0;
+let i = 0;
 
-const target=
+let target =
 document.getElementById(
 "typing"
 );
 
-function type(){
+document
+.getElementById(
+"next"
+)
+.style.display=
+"none";
+
+function ketik(){
 
 if(
-i<text.length
+i<
+text.length
 ){
 
 target.innerHTML+=
 text[i]
-==="\\n"
+=="\n"
 ?
 "<br>"
 :
@@ -80,7 +72,7 @@ text[i];
 i++;
 
 setTimeout(
-type,
+ketik,
 35
 );
 
@@ -99,7 +91,7 @@ document
 
 }
 
-type();
+ketik();
 
 document
 .getElementById(
@@ -111,8 +103,7 @@ hero.innerHTML=`
 
 <div class="card">
 
-<div style="
-font-size:90px">
+<div style="font-size:90px">
 
 🎵
 
@@ -126,14 +117,11 @@ Playlist Untuk Kamu
 
 <p>
 
-Nanti tinggal
-ganti file musik ❤️
+Tekan play ❤️
 
 </p>
 
-<audio
-id="music"
-controls>
+<audio controls>
 
 <source
 src=""
@@ -141,10 +129,9 @@ type="audio/mp3">
 
 </audio>
 
-<br>
+<br><br>
 
-<button
-id="next2">
+<button id="gallery">
 
 Buka Galeri 📸
 
@@ -156,7 +143,7 @@ Buka Galeri 📸
 
 document
 .getElementById(
-"next2"
+"gallery"
 )
 .onclick=()=>{
 
@@ -164,8 +151,7 @@ hero.innerHTML=`
 
 <div class="card">
 
-<div style="
-font-size:90px">
+<div style="font-size:90px">
 
 📸
 
@@ -173,14 +159,14 @@ font-size:90px">
 
 <h2>
 
-Galeri Akan Dibuat
+Galeri Foto
 
 </h2>
 
 <p>
 
-Selanjutnya:
-foto + confetti
+Nanti isi foto
+di sini ❤️
 
 </p>
 
