@@ -2,36 +2,59 @@ document.getElementById("giftBtn").onclick = function(){
 
 document.body.innerHTML = `
 
-<div style="
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:30px;
-">
+<div class="letter-page">
 
-<div style="
-background:white;
-padding:40px;
-border-radius:30px;
-max-width:500px;
-text-align:center;
-box-shadow:0 20px 60px rgba(0,0,0,.1);
-">
+<div class="letter">
 
-<h2>💌 Untuk Kamu</h2>
+<div class="seal">
+💖
+</div>
+
+<h2>
+Untuk Kamu
+</h2>
 
 <p>
+
 Selamat ulang tahun ❤️
+
 <br><br>
-Terima kasih sudah hadir.
-Ini hadiah kecil yang aku buat khusus buat kamu ✨
+
+Makasih sudah hadir,
+nemenin, bikin hari lebih seru,
+dan jadi bagian dari cerita yang
+mau terus aku ingat.
+
+<br><br>
+
+Semoga semua hal baik datang
+ke kamu tahun ini ✨
+
+<br><br>
+
+Dan ini baru awal hadiahnya…
+
 </p>
+
+<button id="next">
+
+Lanjut →
+</button>
 
 </div>
 
 </div>
 
 `;
+
+document
+.getElementById("next")
+.onclick=()=>{
+
+alert(
+"Part 4 → Musik + Galeri 📸"
+);
+
+};
 
 };
