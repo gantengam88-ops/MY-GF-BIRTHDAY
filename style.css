@@ -148,3 +148,50 @@ translateY(-15px);
 }
 
 }
+.letter-page{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:30px;
+
+}
+
+.letter{
+
+background:white;
+
+padding:40px;
+
+border-radius:30px;
+
+max-width:500px;
+
+text-align:center;
+
+box-shadow:
+0 20px 60px
+rgba(0,0,0,.1);
+
+}
+
+.letter h2{
+
+color:#ff5f96;
+
+margin-bottom:20px;
+
+}
+
+.letter p{
+
+line-height:1.8;
+
+color:#555;
+
+}
