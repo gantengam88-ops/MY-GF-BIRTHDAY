@@ -1,13 +1,23 @@
 const btn =
-document.getElementById("openBtn");
+document.getElementById("giftBtn");
 
-btn.addEventListener(
-"click",
-()=>{
+btn.onclick=()=>{
+
+document.body.style.transition=
+"1s";
+
+document.body.style.opacity=
+".2";
+
+setTimeout(()=>{
 
 alert(
-"Website hadiah sedang disiapkan 💖"
+"Part 2 akan membuka hadiah 💌"
 );
 
-}
-);
+document.body.style.opacity=
+"1";
+
+},900);
+
+};
