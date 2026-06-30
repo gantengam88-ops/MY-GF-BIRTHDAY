@@ -1,26 +1,23 @@
 const btn = document.getElementById("giftBtn");
 
-btn.addEventListener("click", () => {
+if (btn) {
+
+btn.addEventListener("click", function () {
 
 const hero =
 document.querySelector(".hero");
 
-hero.style.animation =
-"fadeOut .8s forwards";
+hero.innerHTML = `
 
-setTimeout(()=>{
+<div class="card">
 
-hero.innerHTML=`
-
-<div class="gift">
-
-<div class="envelope">
+<div class="mail">
 💌
 </div>
 
-<div class="letter">
-
-<h2>Untuk Kamu ❤️</h2>
+<h2>
+Untuk Kamu ❤️
+</h2>
 
 <p>
 
@@ -30,35 +27,14 @@ Selamat ulang tahun.
 
 Terima kasih sudah hadir.
 
-Semoga semua hal baik
-datang ke kamu ✨
+Semoga hari ini indah ✨
 
 </p>
 
 </div>
 
-</div>
-
 `;
 
-const env =
-document.querySelector(".envelope");
-
-const letter =
-document.querySelector(".letter");
-
-setTimeout(()=>{
-
-env.classList.add("open");
-
-},500);
-
-setTimeout(()=>{
-
-letter.classList.add("show");
-
-},1600);
-
-},800);
-
 });
+
+}
