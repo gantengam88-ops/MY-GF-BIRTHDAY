@@ -1,8 +1,13 @@
 *{
+
 margin:0;
+
 padding:0;
+
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+
+font-family:Arial;
+
 }
 
 body{
@@ -18,13 +23,12 @@ justify-content:center;
 align-items:center;
 
 background:
+
 linear-gradient(
 180deg,
-#ffe4ef,
-#fff8fc
+#ffe3ef,
+#fff8fb
 );
-
-position:relative;
 
 }
 
@@ -37,33 +41,35 @@ position:absolute;
 inset:0;
 
 background:
+
 radial-gradient(
 white 1px,
 transparent 1px
 );
 
 background-size:
-80px 80px;
 
-opacity:.4;
+90px 90px;
+
+opacity:.35;
 
 animation:
+
 blink 5s infinite;
 
 }
 
-/* halaman awal */
+/* opening */
 
 .hero{
 
 text-align:center;
 
-padding:20px;
-
 z-index:2;
 
 animation:
-appear 1s;
+
+show .8s;
 
 }
 
@@ -72,17 +78,18 @@ appear 1s;
 font-size:120px;
 
 animation:
-float 3s infinite;
+
+bear 3s infinite;
 
 }
 
 .hero h1{
 
+color:#ff5a96;
+
 font-size:52px;
 
-margin-top:15px;
-
-color:#ff5b95;
+margin-top:10px;
 
 }
 
@@ -92,8 +99,6 @@ margin-top:20px;
 
 color:#666;
 
-font-size:18px;
-
 }
 
 button{
@@ -101,13 +106,14 @@ button{
 margin-top:35px;
 
 padding:
-18px 48px;
+
+18px 45px;
 
 border:none;
 
 border-radius:999px;
 
-background:#ff77aa;
+background:#ff78ac;
 
 color:white;
 
@@ -122,86 +128,84 @@ transition:.3s;
 button:hover{
 
 transform:
+
 scale(1.08);
 
 }
 
-/* surat */
+/* animasi buka */
+
+.open{
+
+animation:
+
+fade .8s forwards;
+
+}
 
 .card{
 
 background:white;
 
+padding:55px;
+
 width:560px;
 
 max-width:92%;
-
-padding:50px;
 
 border-radius:35px;
 
 text-align:center;
 
 box-shadow:
-0 30px 80px
-rgba(255,120,170,.25);
+
+0 30px 90px
+rgba(255,120,170,.2);
 
 animation:
-cardShow
-1s;
+
+card .9s;
 
 }
 
 .mail{
 
-font-size:90px;
-
-margin-bottom:20px;
+font-size:110px;
 
 animation:
-mailFloat
-2s infinite;
+
+gift 1.7s;
 
 }
 
 .card h2{
 
-color:#ff5b95;
+margin-top:15px;
 
-font-size:38px;
+font-size:42px;
 
-margin-bottom:25px;
+color:#ff5a96;
 
 }
 
 .card p{
 
-line-height:2;
+margin-top:30px;
 
-font-size:18px;
+line-height:2;
 
 color:#666;
 
 }
 
-/* animasi */
+/* keyframes */
 
-@keyframes float{
-
-50%{
-
-transform:
-translateY(-15px);
-
-}
-
-}
-
-@keyframes mailFloat{
+@keyframes bear{
 
 50%{
 
 transform:
+
 translateY(-12px);
 
 }
@@ -212,20 +216,17 @@ translateY(-12px);
 
 50%{
 
-opacity:.8;
+opacity:.7;
 
 }
 
 }
 
-@keyframes appear{
+@keyframes show{
 
 from{
 
 opacity:0;
-
-transform:
-translateY(20px);
 
 }
 
@@ -233,28 +234,33 @@ to{
 
 opacity:1;
 
+}
+
+}
+
+@keyframes fade{
+
+to{
+
+opacity:0;
+
 transform:
-translateY(0);
+
+scale(.8);
 
 }
 
 }
 
-@keyframes cardShow{
+@keyframes card{
 
 0%{
 
 opacity:0;
 
 transform:
-scale(.6);
 
-}
-
-70%{
-
-transform:
-scale(1.05);
+translateY(150px);
 
 }
 
@@ -263,21 +269,56 @@ scale(1.05);
 opacity:1;
 
 transform:
+
+translateY(0);
+
+}
+
+}
+
+@keyframes gift{
+
+0%{
+
+opacity:0;
+
+transform:
+
+translateY(250px)
+scale(.3);
+
+}
+
+40%{
+
+opacity:1;
+
+transform:
+
+translateY(0)
+scale(1.2);
+
+}
+
+70%{
+
+transform:
+
+scale(.95);
+
+}
+
+100%{
+
+transform:
+
 scale(1);
 
 }
 
 }
 
-/* HP */
-
-@media(max-width:600px){
-
-.bear{
-
-font-size:90px;
-
-}
+@media(max-width:700px){
 
 .hero h1{
 
@@ -288,12 +329,6 @@ font-size:36px;
 .card{
 
 padding:35px;
-
-}
-
-.card h2{
-
-font-size:30px;
 
 }
 
