@@ -1,24 +1,31 @@
-const btn = document.getElementById("giftBtn");
+const btn =
+document.getElementById(
+"giftBtn"
+);
 
-if (btn) {
-
-btn.addEventListener("click", function () {
+btn.addEventListener(
+"click",
+function(){
 
 const hero =
-document.querySelector(".hero");
-
-if (!hero) return;
+document.querySelector(
+".hero"
+);
 
 hero.innerHTML = `
 
 <div class="card">
 
 <div class="mail">
+
 💌
+
 </div>
 
 <h2>
+
 Untuk Kamu ❤️
+
 </h2>
 
 <p>
@@ -31,14 +38,12 @@ Terima kasih sudah hadir.
 
 <br><br>
 
-Semoga semua hal baik
-datang ke kamu ✨
+Semoga tahun ini
+lebih bahagia ✨
 
 </p>
 
-<br>
-
-<button id="nextBtn">
+<button id="next">
 
 Lanjut →
 
@@ -48,23 +53,17 @@ Lanjut →
 
 `;
 
-const next =
-document.getElementById(
-"nextBtn"
-);
-
-if(next){
-
-next.addEventListener(
-"click",
-function(){
+document
+.getElementById(
+"next"
+)
+.onclick=function(){
 
 hero.innerHTML=`
 
 <div class="card">
 
-<div style="
-font-size:90px">
+<div style="font-size:90px">
 
 🎵
 
@@ -78,8 +77,7 @@ Playlist Untuk Kamu
 
 <p>
 
-Part berikutnya:
-musik + galeri ❤️
+Musik nanti tinggal ditambah.
 
 </p>
 
@@ -87,12 +85,7 @@ musik + galeri ❤️
 
 `;
 
-}
+};
 
+}
 );
-
-}
-
-});
-
-}
