@@ -1,20 +1,13 @@
 *{
-
 margin:0;
-
 padding:0;
-
 box-sizing:border-box;
-
-font-family:Arial;
-
+font-family:Arial,sans-serif;
 }
 
 body{
 
 height:100vh;
-
-overflow:hidden;
 
 display:flex;
 
@@ -22,17 +15,16 @@ justify-content:center;
 
 align-items:center;
 
-background:
+overflow:hidden;
 
+background:
 linear-gradient(
 180deg,
-#ffe3ef,
-#fff8fb
+#ffe4ef,
+#fff8fc
 );
 
 }
-
-/* bintang */
 
 .stars{
 
@@ -41,25 +33,17 @@ position:absolute;
 inset:0;
 
 background:
-
 radial-gradient(
 white 1px,
 transparent 1px
 );
 
 background-size:
-
 90px 90px;
 
-opacity:.35;
-
-animation:
-
-blink 5s infinite;
+opacity:.4;
 
 }
-
-/* opening */
 
 .hero{
 
@@ -67,9 +51,7 @@ text-align:center;
 
 z-index:2;
 
-animation:
-
-show .8s;
+padding:20px;
 
 }
 
@@ -78,22 +60,21 @@ show .8s;
 font-size:120px;
 
 animation:
-
-bear 3s infinite;
+float 3s infinite;
 
 }
 
-.hero h1{
+h1{
 
 color:#ff5a96;
 
 font-size:52px;
 
-margin-top:10px;
+margin-top:20px;
 
 }
 
-.hero p{
+p{
 
 margin-top:20px;
 
@@ -103,43 +84,22 @@ color:#666;
 
 button{
 
-margin-top:35px;
+margin-top:30px;
 
 padding:
-
 18px 45px;
 
 border:none;
 
 border-radius:999px;
 
-background:#ff78ac;
+background:#ff78aa;
 
 color:white;
 
-font-size:20px;
+font-size:18px;
 
 cursor:pointer;
-
-transition:.3s;
-
-}
-
-button:hover{
-
-transform:
-
-scale(1.08);
-
-}
-
-/* animasi buka */
-
-.open{
-
-animation:
-
-fade .8s forwards;
 
 }
 
@@ -147,7 +107,7 @@ fade .8s forwards;
 
 background:white;
 
-padding:55px;
+padding:50px;
 
 width:560px;
 
@@ -157,209 +117,66 @@ border-radius:35px;
 
 text-align:center;
 
-box-shadow:
-
-0 30px 90px
-rgba(255,120,170,.2);
-
 animation:
+popup .7s;
 
-card .9s;
+box-shadow:
+0 20px 60px
+rgba(0,0,0,.1);
 
 }
 
 .mail{
 
-font-size:110px;
+font-size:90px;
 
-animation:
-
-gift 1.7s;
+margin-bottom:20px;
 
 }
 
 .card h2{
 
-margin-top:15px;
-
-font-size:42px;
-
 color:#ff5a96;
+
+margin-bottom:25px;
 
 }
 
 .card p{
 
-margin-top:30px;
-
 line-height:2;
 
-color:#666;
-
 }
 
-/* keyframes */
-
-@keyframes bear{
-
-50%{
-
-transform:
-
-translateY(-12px);
-
-}
-
-}
-
-@keyframes blink{
-
-50%{
-
-opacity:.7;
-
-}
-
-}
-
-@keyframes show{
+@keyframes popup{
 
 from{
 
 opacity:0;
 
+transform:
+translateY(40px);
+
 }
 
 to{
 
 opacity:1;
 
-}
-
-}
-
-@keyframes fade{
-
-to{
-
-opacity:0;
-
 transform:
-
-scale(.8);
-
-}
-
-}
-
-@keyframes card{
-
-0%{
-
-opacity:0;
-
-transform:
-
-translateY(150px);
-
-}
-
-100%{
-
-opacity:1;
-
-transform:
-
 translateY(0);
 
 }
 
 }
 
-@keyframes gift{
+@keyframes float{
 
-0%{
-
-opacity:0;
+50%{
 
 transform:
-
-translateY(250px)
-scale(.3);
+translateY(-10px);
 
 }
-
-40%{
-
-opacity:1;
-
-transform:
-
-translateY(0)
-scale(1.2);
-
-}
-
-70%{
-
-transform:
-
-scale(.95);
-
-}
-
-100%{
-
-transform:
-
-scale(1);
-
-}
-
-}
-
-@media(max-width:700px){
-
-.hero h1{
-
-font-size:36px;
-
-}
-
-.card{
-
-padding:35px;
-
-}
-
-}
-#typing{
-
-margin-top:25px;
-
-line-height:2;
-
-min-height:180px;
-
-}
-
-#next{
-
-display:inline-block;
-
-margin-top:20px;
-
-}
-audio{
-
-margin-top:25px;
-
-width:100%;
-
-}
-
-#next2{
-
-margin-top:25px;
 
 }
