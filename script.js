@@ -1,23 +1,63 @@
-const btn = document.getElementById("giftBtn");
+const btn =
+document.getElementById(
+"giftBtn"
+);
 
-if(btn){
+btn.onclick=()=>{
 
-btn.onclick=function(){
+const hero=
+document.querySelector(
+".hero"
+);
 
-document.querySelector(".hero").innerHTML=`
+hero.classList.add(
+"open"
+);
+
+setTimeout(()=>{
+
+hero.innerHTML=`
 
 <div class="card">
 
-<h2>💌 BERHASIL</h2>
+<div class="mail">
+
+💌
+
+</div>
+
+<h2>
+
+Untuk Kamu ❤️
+
+</h2>
 
 <p>
-Sekarang tombol sudah bekerja.
+
+Selamat ulang tahun.
+
+<br><br>
+
+Terima kasih sudah hadir.
+
+<br><br>
+
+Semoga tahun ini
+lebih bahagia,
+lebih seru,
+dan penuh
+hal baik ✨
+
 </p>
 
 </div>
 
 `;
 
-};
+hero.classList.remove(
+"open"
+);
 
-}
+},800);
+
+};
