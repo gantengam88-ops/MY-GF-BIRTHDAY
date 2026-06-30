@@ -1,25 +1,20 @@
-const btn = document.getElementById("giftBtn");
+const btn =
+document.getElementById("giftBtn");
 
-btn.addEventListener("click", () => {
+btn.onclick=()=>{
 
-document.body.style.overflow="hidden";
-
-const hero =
+const hero=
 document.querySelector(".hero");
 
-hero.innerHTML = `
+hero.innerHTML=`
 
-<div class="open">
+<div class="scene">
 
-<div class="sparkle">
-✨ 💖 ✨
-</div>
-
-<div class="letter">
-
-<div class="seal">
+<div class="envelope">
 💌
 </div>
+
+<div class="letter hidden">
 
 <h2>Untuk Kamu ❤️</h2>
 
@@ -29,9 +24,9 @@ Selamat ulang tahun.
 
 <br><br>
 
-Terima kasih sudah hadir,
+Makasih sudah hadir,
 nemenin, dan jadi bagian
-dari cerita yang indah.
+dari banyak cerita indah.
 
 <br><br>
 
@@ -40,33 +35,56 @@ datang ke kamu ✨
 
 </p>
 
-<button id="nextBtn">
-Lanjut →
-</button>
-
 </div>
 
 </div>
 
 `;
 
-for(let i=0;i<20;i++){
+setTimeout(()=>{
 
-const h =
+document
+.querySelector(".envelope")
+.style.transform=
+"translateY(-120px) scale(1.2)";
+
+},800);
+
+setTimeout(()=>{
+
+document
+.querySelector(".letter")
+.classList.remove("hidden");
+
+startHearts();
+
+},1800);
+
+};
+
+function startHearts(){
+
+setInterval(()=>{
+
+const h=
 document.createElement("div");
 
-h.innerHTML="💖";
+h.className=
+"heart";
 
-h.className="heart";
+h.innerHTML=
+"💖";
 
 h.style.left=
 Math.random()*100+"vw";
 
-h.style.animationDelay=
-Math.random()*2+"s";
-
 document.body.appendChild(h);
 
-}
+setTimeout(
+()=>h.remove(),
+6000
+);
 
-});
+},350);
+
+}
