@@ -1,15 +1,12 @@
 const btn = document.getElementById("giftBtn");
 
-btn.onclick = function () {
+if (btn) {
 
-const hero =
-document.querySelector(".hero");
+btn.addEventListener("click", function () {
 
-hero.classList.add("open");
+const hero = document.querySelector(".hero");
 
-setTimeout(()=>{
-
-hero.innerHTML=`
+hero.innerHTML = `
 
 <div class="card">
 
@@ -21,92 +18,39 @@ hero.innerHTML=`
 Untuk Kamu ❤️
 </h2>
 
-<p id="typing"></p>
+<p>
+Selamat ulang tahun.
+<br><br>
+Terima kasih sudah hadir.
+<br><br>
+Semoga hari ini indah ✨
+</p>
 
-<button id="next">
+<br>
+
+<button id="nextBtn">
+
 Lanjut →
+
 </button>
 
 </div>
 
 `;
 
-let text = `
-Selamat ulang tahun ❤️
-
-Terima kasih sudah hadir.
-
-Semoga tahun ini
-lebih bahagia ✨
-`;
-
-let i = 0;
-
-let target =
+const next =
 document.getElementById(
-"typing"
+"nextBtn"
 );
 
-document
-.getElementById(
-"next"
-)
-.style.display=
-"none";
-
-function ketik(){
-
-if(
-i<
-text.length
-){
-
-target.innerHTML+=
-text[i]
-=="\n"
-?
-"<br>"
-:
-text[i];
-
-i++;
-
-setTimeout(
-ketik,
-35
-);
-
-}
-
-else{
-
-document
-.getElementById(
-"next"
-)
-.style.display=
-"inline-block";
-
-}
-
-}
-
-ketik();
-
-document
-.getElementById(
-"next"
-)
-.onclick=()=>{
+next.onclick=function(){
 
 hero.innerHTML=`
 
 <div class="card">
 
 <div style="font-size:90px">
-
 🎵
-
 </div>
 
 <h2>
@@ -117,56 +61,8 @@ Playlist Untuk Kamu
 
 <p>
 
-Tekan play ❤️
-
-</p>
-
-<audio controls>
-
-<source
-src=""
-type="audio/mp3">
-
-</audio>
-
-<br><br>
-
-<button id="gallery">
-
-Buka Galeri 📸
-
-</button>
-
-</div>
-
-`;
-
-document
-.getElementById(
-"gallery"
-)
-.onclick=()=>{
-
-hero.innerHTML=`
-
-<div class="card">
-
-<div style="font-size:90px">
-
-📸
-
-</div>
-
-<h2>
-
-Galeri Foto
-
-</h2>
-
-<p>
-
-Nanti isi foto
-di sini ❤️
+Nanti kita isi musik
+dan galeri ❤️
 
 </p>
 
@@ -176,8 +72,6 @@ di sini ❤️
 
 };
 
-};
+});
 
-},800);
-
-};
+}
