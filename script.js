@@ -1,46 +1,37 @@
-const btn =
-document.getElementById("giftBtn");
+document.getElementById("giftBtn").onclick = function(){
 
-btn.onclick = () => {
+document.body.innerHTML = `
 
-document.body.style.transition =
-"1s";
+<div style="
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px;
+">
 
-document.body.style.opacity =
-"0";
-
-setTimeout(()=>{
-
-document.body.innerHTML=`
-
-<div class="letter-page">
-
-<div class="letter">
+<div style="
+background:white;
+padding:40px;
+border-radius:30px;
+max-width:500px;
+text-align:center;
+box-shadow:0 20px 60px rgba(0,0,0,.1);
+">
 
 <h2>💌 Untuk Kamu</h2>
 
 <p>
-Selamat ulang tahun ya ❤️
+Selamat ulang tahun ❤️
 <br><br>
-Terima kasih sudah hadir,
-nemenin, dan jadi bagian
-dari banyak cerita.
-<br><br>
-Ini baru awal dari hadiah kecil ini ✨
+Terima kasih sudah hadir.
+Ini hadiah kecil yang aku buat khusus buat kamu ✨
 </p>
-
-<button onclick="location.reload()">
-💖 Kembali
-</button>
 
 </div>
 
 </div>
 
 `;
-
-document.body.style.opacity="1";
-
-},900);
 
 };
