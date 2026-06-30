@@ -3,9 +3,7 @@ document.getElementById(
 "giftBtn"
 );
 
-btn.addEventListener(
-"click",
-function(){
+btn.onclick = () => {
 
 const hero =
 document.querySelector(
@@ -57,13 +55,14 @@ document
 .getElementById(
 "next"
 )
-.onclick=function(){
+.onclick=()=>{
 
 hero.innerHTML=`
 
 <div class="card">
 
-<div style="font-size:90px">
+<div style="
+font-size:90px">
 
 🎵
 
@@ -77,15 +76,28 @@ Playlist Untuk Kamu
 
 <p>
 
-Musik nanti tinggal ditambah.
+Sekarang website
+sudah jalan lagi 🎉
 
 </p>
+
+<button id="back">
+
+← Kembali
+
+</button>
 
 </div>
 
 `;
 
+document
+.getElementById(
+"back"
+)
+onclick=
+()=>location.reload();
+
 };
 
-}
-);
+};
