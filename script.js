@@ -39,8 +39,7 @@ Ini baru awal dari hadiah kecil ini ✨
 
 `;
 
-document.body.style.opacity=
-"1";
+document.body.style.opacity="1";
 
 },900);
 
