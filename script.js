@@ -1,14 +1,10 @@
 const btn = document.getElementById("giftBtn");
 
-if (btn) {
+btn.addEventListener("click", function(){
 
-btn.addEventListener("click", function () {
-
-const hero =
-document.querySelector(".hero");
+const hero = document.querySelector(".hero");
 
 hero.innerHTML = `
-
 <div class="card">
 
 <div class="mail">
@@ -20,21 +16,14 @@ Untuk Kamu ❤️
 </h2>
 
 <p>
-
 Selamat ulang tahun.
-
 <br><br>
-
 Terima kasih sudah hadir.
-
-Semoga hari ini indah ✨
-
+<br><br>
+Semoga semua hal baik datang ke kamu ✨
 </p>
 
 </div>
-
 `;
 
 });
-
-}
