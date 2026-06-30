@@ -1,1 +1,1 @@
-alert("SCRIPT BARU BERHASIL");
+console.log("script jalan");
