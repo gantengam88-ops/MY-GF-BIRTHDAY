@@ -4,7 +4,10 @@ if (btn) {
 
 btn.addEventListener("click", function () {
 
-const hero = document.querySelector(".hero");
+const hero =
+document.querySelector(".hero");
+
+if (!hero) return;
 
 hero.innerHTML = `
 
@@ -19,11 +22,18 @@ Untuk Kamu ❤️
 </h2>
 
 <p>
+
 Selamat ulang tahun.
+
 <br><br>
+
 Terima kasih sudah hadir.
+
 <br><br>
-Semoga hari ini indah ✨
+
+Semoga semua hal baik
+datang ke kamu ✨
+
 </p>
 
 <br>
@@ -43,14 +53,21 @@ document.getElementById(
 "nextBtn"
 );
 
-next.onclick=function(){
+if(next){
+
+next.addEventListener(
+"click",
+function(){
 
 hero.innerHTML=`
 
 <div class="card">
 
-<div style="font-size:90px">
+<div style="
+font-size:90px">
+
 🎵
+
 </div>
 
 <h2>
@@ -61,8 +78,8 @@ Playlist Untuk Kamu
 
 <p>
 
-Nanti kita isi musik
-dan galeri ❤️
+Part berikutnya:
+musik + galeri ❤️
 
 </p>
 
@@ -70,7 +87,11 @@ dan galeri ❤️
 
 `;
 
-};
+}
+
+);
+
+}
 
 });
 
