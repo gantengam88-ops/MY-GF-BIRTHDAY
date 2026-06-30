@@ -20,15 +20,42 @@ align-items:center;
 background:
 linear-gradient(
 180deg,
-#ffe4ee,
-#fff6fb
+#ffe4ef,
+#fff7fb
 );
+
+}
+
+.stars{
+
+position:absolute;
+
+inset:0;
+
+background:
+radial-gradient(
+white 1px,
+transparent 1px
+);
+
+background-size:
+70px
+70px;
+
+opacity:.35;
+
+animation:
+blink 5s infinite;
 
 }
 
 .hero{
 
 text-align:center;
+
+z-index:2;
+
+padding:20px;
 
 }
 
@@ -43,119 +70,83 @@ float 3s infinite;
 
 h1{
 
-color:#ff5a96;
+margin-top:15px;
 
-margin:20px 0;
+color:#ff5b95;
+
+font-size:48px;
+
+}
+
+p{
+
+margin-top:15px;
+
+color:#666;
 
 }
 
 button{
 
-padding:18px 40px;
+margin-top:35px;
+
+padding:
+18px
+45px;
 
 border:none;
 
 border-radius:999px;
 
-background:#ff78ab;
+background:#ff77aa;
 
 color:white;
+
+font-size:20px;
 
 cursor:pointer;
 
 }
 
-.gift-scene{
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-}
-
-.envelope{
-
-font-size:120px;
-
-transition:1.2s;
-
-animation:
-bounce 2s infinite;
-
-}
-
-.envelope.open{
-
-transform:
-translateY(-120px)
-rotate(12deg)
-scale(1.3);
-
-opacity:.2;
-
-}
-
-.letter{
-
-margin-top:-50px;
+.card{
 
 background:white;
 
-padding:45px;
+padding:50px;
 
 border-radius:35px;
 
 max-width:550px;
 
 box-shadow:
-0 30px 90px
+0 25px 90px
 rgba(255,120,170,.25);
 
-transition:
-1.2s;
-
-opacity:1;
-
-transform:
-translateY(0);
+animation:
+show 1s;
 
 }
 
-.hidden{
+.mail{
 
-opacity:0;
+font-size:90px;
 
-transform:
-translateY(200px);
-
-}
-
-.letter h2{
-
-color:#ff5f95;
-
-margin-bottom:20px;
+animation:
+float 2s infinite;
 
 }
 
-.letter p{
+.card h2{
+
+color:#ff5b95;
+
+margin:20px 0;
+
+}
+
+.card p{
 
 line-height:2;
-
-color:#666;
-
-}
-
-@keyframes bounce{
-
-50%{
-
-transform:
-translateY(-15px);
-
-}
 
 }
 
@@ -165,6 +156,38 @@ translateY(-15px);
 
 transform:
 translateY(-15px);
+
+}
+
+}
+
+@keyframes blink{
+
+50%{
+
+opacity:.7;
+
+}
+
+}
+
+@keyframes show{
+
+from{
+
+opacity:0;
+
+transform:
+scale(.6);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+scale(1);
 
 }
 
