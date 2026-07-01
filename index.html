@@ -1,60 +1,70 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Birthday Surprise ❤️</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Netflix Birthday Film ❤️</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- LOADING -->
-<div id="loading">
-  <div class="loaderHeart">❤️</div>
-  <p>Preparing Surprise...</p>
+<!-- NETFLIX INTRO -->
+<div id="intro">
+  <div class="netflixLogo">N</div>
+  <p>Loading Story...</p>
 </div>
 
-<!-- BACKGROUND EFFECT -->
-<div class="stars"></div>
-<div id="hearts"></div>
-<div id="petals"></div>
-
-<!-- MUSIC -->
+<!-- AUDIO -->
 <audio id="music" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 <button id="musicBtn">🎵</button>
 
-<!-- PAGE WRAPPER -->
-<div id="pages">
+<!-- BACKGROUND -->
+<div class="stars"></div>
+<div class="vignette"></div>
 
-  <!-- HOME -->
-  <section class="page active" id="home">
-    <h1>Happy Birthday ❤️</h1>
-    <p>Scroll / Klik untuk lanjut</p>
-    <button class="next" data-next="letter">Open Gift 🎁</button>
+<!-- STORY WRAPPER -->
+<div id="story">
+
+  <!-- SCENE 1 -->
+  <section class="scene active" id="s1">
+    <h1 class="fade">This is not just a website...</h1>
+    <p class="fade delay">This is a memory.</p>
+    <button data-next="s2">Continue</button>
   </section>
 
-  <!-- LETTER -->
-  <section class="page" id="letter">
-    <h2>Untuk Kamu ❤️</h2>
-    <p id="typingText"></p>
-    <button class="next" data-next="playlist">Lanjut 🎵</button>
+  <!-- SCENE 2 -->
+  <section class="scene" id="s2">
+    <h1 class="zoom">For someone special ❤️</h1>
+    <p id="typing"></p>
+    <button data-next="s3">Continue</button>
   </section>
 
-  <!-- PLAYLIST -->
-  <section class="page" id="playlist">
-    <h2>Playlist 🎵</h2>
-    <p>Musik spesial untuk kamu</p>
-    <button class="next" data-next="final">Next ❤️</button>
+  <!-- SCENE 3 -->
+  <section class="scene" id="s3">
+    <h1 class="float">Our Moments</h1>
+    <div class="carousel">
+      <div class="card">📸</div>
+      <div class="card">📸</div>
+      <div class="card">📸</div>
+    </div>
+    <button data-next="s4">Continue</button>
   </section>
 
-  <!-- FINAL -->
-  <section class="page" id="final">
-    <h1>Happy Birthday 🎂</h1>
-    <p>I Love You ❤️</p>
-    <button id="restart">Replay 🔄</button>
+  <!-- SCENE 4 -->
+  <section class="scene" id="s4">
+    <h1 class="glow">I have something for you...</h1>
+    <button data-next="s5">Open Gift 🎁</button>
+  </section>
+
+  <!-- SCENE 5 -->
+  <section class="scene" id="s5">
+    <div class="giftBox">🎁</div>
+    <h2 class="fade">Happy Birthday ❤️</h2>
+    <p>You are my favorite story.</p>
+    <button id="replay">Replay</button>
   </section>
 
 </div>
