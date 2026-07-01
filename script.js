@@ -1,3 +1,34 @@
+const loading=document.getElementById("loading");
+const progress=document.getElementById("progress");
+
+let load=0;
+
+const loadingInterval=setInterval(()=>{
+
+load++;
+
+progress.style.width=load+"%";
+
+if(load>=100){
+
+clearInterval(loadingInterval);
+
+setTimeout(()=>{
+
+loading.style.opacity="0";
+
+setTimeout(()=>{
+
+loading.style.display="none";
+
+},800);
+
+},300);
+
+}
+
+},25);
+
 const page1=document.getElementById("page1");
 const page2=document.getElementById("page2");
 const page3=document.getElementById("page3");
@@ -12,27 +43,29 @@ const typing=document.getElementById("typing");
 
 const message=`Happy Birthday Sayang ❤️
 
-Hari ini adalah hari yang spesial.
+Hari ini adalah hari yang sangat spesial.
 
 Semoga semua impianmu tercapai.
 
 Semoga kamu selalu sehat.
 
-Semoga kamu selalu bahagia.
+Selalu bahagia.
+
+Selalu tersenyum.
 
 Terima kasih sudah hadir di hidupku.
 
 Aku bersyukur bisa mengenalmu.
 
-Semoga kita bisa terus bersama.
+Aku sayang kamu lebih dari yang bisa kuucapkan.
 
 I Love You Forever ❤️`;
 
 function show(page){
 
-document.querySelectorAll(".page").forEach(item=>{
+document.querySelectorAll(".page").forEach(p=>{
 
-item.classList.remove("active");
+p.classList.remove("active");
 
 });
 
@@ -74,12 +107,13 @@ write();
 
 openBtn.onclick=function(){
 
+document.querySelector(".envelope").classList.add("open");
+
 show(page2);
 
-setTimeout(typeWriter,500);
+setTimeout(typeWriter,700);
 
 };
-
 nextBtn.onclick=function(){
 
 show(page3);
@@ -90,87 +124,171 @@ lastBtn.onclick=function(){
 
 show(page4);
 
+createConfetti();
+
 };
+
 restartBtn.onclick=function(){
 
 show(page1);
 
+loveCount=0;
+
+loveText.innerHTML="❤️ 0";
+
+document.querySelector(".envelope").classList.remove("open");
+
 };
 
-function createHeart(){
 
-const heart=document.createElement("div");
+// =====================
+// SLIDER FOTO
+// =====================
 
-heart.innerHTML=["💖","💕","💗","💓","💞","🤍","❤️"][Math.floor(Math.random()*7)];
+const slides=document.querySelectorAll(".slide");
 
-heart.style.position="fixed";
-heart.style.left=Math.random()*100+"vw";
-heart.style.top="110vh";
-heart.style.fontSize=(20+Math.random()*30)+"px";
-heart.style.pointerEvents="none";
-heart.style.zIndex="999";
-heart.style.transition="transform 8s linear, opacity 8s linear";
+const prevBtn=document.getElementById("prevBtn");
 
-document.body.appendChild(heart);
+const nextPhotoBtn=document.getElementById("nextPhotoBtn");
 
-setTimeout(()=>{
+let current=0;
 
-heart.style.transform=`translateY(-130vh) rotate(${Math.random()*720}deg)`;
-heart.style.opacity="0";
+function showSlide(index){
 
-},100);
+slides.forEach(slide=>{
 
-setTimeout(()=>{
+slide.classList.remove("active");
 
-heart.remove();
+});
 
-},8000);
+slides[index].classList.add("active");
 
 }
 
-setInterval(createHeart,400);
+nextPhotoBtn.onclick=function(){
+
+current++;
+
+if(current>=slides.length){
+
+current=0;
+
+}
+
+showSlide(current);
+
+};
+
+prevBtn.onclick=function(){
+
+current--;
+
+if(current<0){
+
+current=slides.length-1;
+
+}
+
+showSlide(current);
+
+};
+
+
+// =====================
+// LOVE COUNTER
+// =====================
+
+const loveBtn=document.getElementById("loveBtn");
+
+const loveText=document.getElementById("countLove");
+
+let loveCount=0;
+
+loveBtn.onclick=function(){
+
+loveCount++;
+
+loveText.innerHTML="❤️ "+loveCount;
+
+loveBtn.style.transform="scale(1.15)";
+
+setTimeout(()=>{
+
+loveBtn.style.transform="scale(1)";
+
+},150);
+
+};
+
+
+// =====================
+// CONFETTI
+// =====================
 
 function createConfetti(){
 
-for(let i=0;i<80;i++){
+for(let i=0;i<120;i++){
 
 const c=document.createElement("div");
 
 c.style.position="fixed";
+
 c.style.left=Math.random()*100+"vw";
+
 c.style.top="-20px";
-c.style.width="8px";
-c.style.height="14px";
+
+c.style.width="10px";
+
+c.style.height="16px";
+
 c.style.borderRadius="3px";
 
 const colors=[
+
 "#ff4f93",
-"#ff8db8",
+
 "#ffd166",
+
 "#7bdff2",
+
 "#b8f2e6",
-"#cdb4db"
+
+"#cdb4db",
+
+"#ffffff"
+
 ];
 
 c.style.background=colors[Math.floor(Math.random()*colors.length)];
 
 c.style.pointerEvents="none";
-c.style.zIndex="999";
+
+c.style.zIndex="9999";
 
 document.body.appendChild(c);
 
 const duration=2500+Math.random()*2500;
 
 c.animate([
+
 {
+
 transform:"translateY(0) rotate(0deg)"
+
 },
+
 {
-transform:`translateY(${window.innerHeight+50}px) rotate(${720+Math.random()*720}deg)`
+
+transform:`translateY(${window.innerHeight+80}px) rotate(${720+Math.random()*720}deg)`
+
 }
+
 ],{
+
 duration:duration,
+
 easing:"linear"
+
 });
 
 setTimeout(()=>{
@@ -183,10 +301,47 @@ c.remove();
 
 }
 
-lastBtn.onclick=function(){
 
-show(page4);
+// =====================
+// HATI BERTERBANGAN
+// =====================
 
-createConfetti();
+function createHeart(){
 
-};
+const heart=document.createElement("div");
+
+heart.innerHTML=["💖","💕","💗","💓","💞","❤️","🤍"][Math.floor(Math.random()*7)];
+
+heart.style.position="fixed";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.top="105vh";
+
+heart.style.fontSize=(20+Math.random()*25)+"px";
+
+heart.style.pointerEvents="none";
+
+heart.style.zIndex="999";
+
+heart.style.transition="8s linear";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.style.transform=`translateY(-120vh) rotate(${Math.random()*720}deg)`;
+
+heart.style.opacity="0";
+
+},100);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},8000);
+
+}
+
+setInterval(createHeart,450);
