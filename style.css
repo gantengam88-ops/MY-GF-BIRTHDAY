@@ -6,18 +6,17 @@
 }
 
 body {
-  background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
-  overflow-x: hidden;
+  background: black;
   color: white;
+  overflow: hidden;
 }
 
-/* LOADING */
-#loading {
+/* INTRO */
+#intro {
   position: fixed;
   width: 100%;
   height: 100vh;
   background: black;
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,61 +24,86 @@ body {
   z-index: 9999;
 }
 
-.loaderHeart {
-  font-size: 40px;
-  animation: beat 1s infinite;
+.netflixLogo {
+  font-size: 80px;
+  color: red;
+  font-weight: bold;
+  animation: zoom 2s ease;
 }
 
-@keyframes beat {
-  0%,100% {transform: scale(1);}
-  50% {transform: scale(1.4);}
+@keyframes zoom {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
 }
 
-/* PAGE SYSTEM */
-#pages {
-  height: 100vh;
-}
-
-.page {
+/* SCENES */
+.scene {
   display: none;
   height: 100vh;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   text-align: center;
   padding: 20px;
-  animation: fade 1s ease;
 }
 
-.page.active {
+.scene.active {
   display: flex;
 }
 
+/* EFFECTS */
+.fade { animation: fade 2s ease; }
+.zoom { animation: zoomIn 1.5s ease; }
+.float { animation: float 3s infinite; }
+
 @keyframes fade {
-  from {opacity: 0; transform: translateY(30px);}
-  to {opacity: 1; transform: translateY(0);}
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1;}
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0.6); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
+
+@keyframes float {
+  0%,100% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+}
+
+/* CAROUSEL */
+.carousel {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.card {
+  width: 80px;
+  height: 80px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* BUTTON */
 button {
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 10px 25px;
+  border-radius: 30px;
   border: none;
-  border-radius: 20px;
-  background: white;
-  color: black;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-button:hover {
-  transform: scale(1.1);
+/* GIFT */
+.giftBox {
+  font-size: 60px;
+  animation: shake 1s infinite;
 }
 
-/* MUSIC BUTTON */
-#musicBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  border-radius: 50%;
+@keyframes shake {
+  0%,100% {transform: rotate(0);}
+  50% {transform: rotate(10deg);}
 }
