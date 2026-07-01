@@ -112,6 +112,8 @@ const timer = setInterval(()=>{
 
 typingText.innerHTML += message.charAt(index);
 
+typingText.scrollTop = typingText.scrollHeight;
+
 index++;
 
 if(index >= message.length){
@@ -131,6 +133,8 @@ clearInterval(timer);
 giftBtn.addEventListener("click",()=>{
 
 showPage(letterPage);
+
+letterPage.scrollTop = 0;
 
 typeWriter();
 
