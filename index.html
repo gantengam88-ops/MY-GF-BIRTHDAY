@@ -1,57 +1,458 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Baby ❤️</title>
 
-<meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
 
-<meta name="viewport"
-content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<title>For My Bby ❤️</title>
-
-<link
-rel="stylesheet"
-href="style.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="stars"></div>
+<!-- Background -->
+<div id="stars"></div>
+<div id="aurora"></div>
+<div id="hearts"></div>
+<div id="sakura"></div>
+<div id="cursor-glow"></div>
 
-<div class="hero">
+<!-- ========================= -->
+<!-- LOADING -->
+<!-- ========================= -->
 
-<div class="bear">
-🐻
-</div>
+<section id="loading">
 
-<h1>
-Happy Birthday
-<br>
-My Love ❤️
-</h1>
+    <div class="loader-heart">
+        ❤️
+    </div>
 
-<p>
+    <h2>Preparing Something Special...</h2>
 
-Aku bikin sesuatu
-buat kamu ✨
+</section>
 
-</p>
+<!-- ========================= -->
+<!-- MUSIC -->
+<!-- ========================= -->
 
-<button id="giftBtn">
+<audio id="bgMusic" loop>
+    <source src="assets/music/music.mp3" type="audio/mpeg">
+</audio>
 
-🎁 Open Gift
-
+<button id="musicButton">
+    ▶ Putar Musik
 </button>
 
+<!-- ========================= -->
+<!-- ENVELOPE -->
+<!-- ========================= -->
+
+<section id="envelopeSection">
+
+    <div class="envelope" id="openEnvelope">
+
+        <div class="top"></div>
+
+        <div class="letter">
+
+            <h2>💌</h2>
+
+            <h3>Untuk Kamu</h3>
+
+            <p>Klik untuk membuka surat...</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- HERO -->
+<!-- ========================= -->
+
+<section id="hero">
+
+    <h1>
+        Happy Birthday
+    </h1>
+
+    <h2>
+        My Love ❤️
+    </h2>
+
+    <p>
+        Hari ini adalah hari spesialmu...
+    </p>
+
+</section>
+
+<!-- ========================= -->
+<!-- FIRST LETTER -->
+<!-- ========================= -->
+
+<section class="letter-section reveal">
+
+    <div class="paper">
+
+        <h2>Dear Sayang ❤️</h2>
+
+        <p>
+
+            Hari ini aku cuma ingin mengucapkan...
+
+            Selamat ulang tahun.
+
+            Semoga semua impianmu tercapai.
+
+            Terima kasih sudah hadir dalam hidupku.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- PHOTO 1 -->
+<!-- ========================= -->
+
+<section class="photo reveal">
+
+    <img src="assets/images/photo1.jpg">
+
+</section>
+
+<!-- ========================= -->
+<!-- TYPING -->
+<!-- ========================= -->
+
+<section id="typingSection">
+
+<h2 id="typing"></h2>
+
+</section>
+
+<!-- ========================= -->
+<!-- GALLERY -->
+<!-- ========================= -->
+
+<section id="gallery">
+
+<h2>Our Memories 📸</h2>
+
+<div class="gallery-grid">
+
+<img src="assets/images/photo1.jpg">
+
+<img src="assets/images/photo2.jpg">
+
+<img src="assets/images/photo3.jpg">
+
+<img src="assets/images/photo4.jpg">
+
+<img src="assets/images/photo5.jpg">
+
+<img src="assets/images/photo6.jpg">
+
 </div>
 
-<script
-src="script.js">
+</section>
 
-</script>
+<!-- ========================= -->
+<!-- TIMELINE -->
+<!-- ========================= -->
+
+<section id="timeline">
+
+<h2>Our Story ❤️</h2>
+
+<div class="line">
+
+<div class="event">
+
+<span>2023</span>
+
+<h3>Pertama Kenal</h3>
+
+<p>
+Semua berawal dari sini.
+</p>
+
+</div>
+
+<div class="event">
+
+<span>2023</span>
+
+<h3>Pertama Chat</h3>
+
+<p>
+Hari yang tidak akan kulupakan.
+</p>
+
+</div>
+
+<div class="event">
+
+<span>2024</span>
+
+<h3>Pertama Ketemu</h3>
+
+<p>
+Deg-degan tapi bahagia.
+</p>
+
+</div>
+
+<div class="event">
+
+<span>2024</span>
+
+<h3>Pertama Jalan</h3>
+
+<p>
+Semoga jadi kenangan selamanya.
+</p>
+
+</div>
+
+<div class="event">
+
+<span>Today ❤️</span>
+
+<h3>Happy Birthday</h3>
+
+<p>
+Dan semoga masih banyak cerita yang kita buat.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- MEMORY CARDS -->
+<!-- ========================= -->
+
+<section id="memoryCards">
+
+<h2>20 Alasan Aku Sayang Kamu ❤️</h2>
+
+<div class="cards">
+
+<div class="card">1. Karena senyummu.</div>
+
+<div class="card">2. Karena perhatianmu.</div>
+
+<div class="card">3. Karena kamu sabar.</div>
+
+<div class="card">4. Karena kamu lucu.</div>
+
+<div class="card">5. Karena kamu cantik.</div>
+
+<div class="card">6. Karena kamu selalu ada.</div>
+
+<div class="card">7. Karena kamu kuat.</div>
+
+<div class="card">8. Karena kamu pengertian.</div>
+
+<div class="card">9. Karena kamu bikin nyaman.</div>
+
+<div class="card">10. Karena kamu penyayang.</div>
+
+<div class="card">11. Karena kamu baik.</div>
+
+<div class="card">12. Karena kamu tulus.</div>
+
+<div class="card">13. Karena kamu unik.</div>
+
+<div class="card">14. Karena kamu dewasa.</div>
+
+<div class="card">15. Karena kamu setia.</div>
+
+<div class="card">16. Karena kamu manja.</div>
+
+<div class="card">17. Karena kamu hebat.</div>
+
+<div class="card">18. Karena kamu selalu mendukungku.</div>
+
+<div class="card">19. Karena kamu adalah rumahku.</div>
+
+<div class="card">20. Karena aku mencintaimu ❤️</div>
+
+</div>
+
+</section>
+```
+```html
+<!-- ========================= -->
+<!-- SPOTIFY -->
+<!-- ========================= -->
+
+<section id="spotify" class="reveal">
+
+    <h2>🎵 Lagu Untuk Kamu</h2>
+
+    <p>Semoga lagu ini selalu mengingatkanmu padaku ❤️</p>
+
+    <!-- Ganti link di bawah dengan playlist atau lagu Spotify milikmu -->
+    <iframe
+        style="border-radius:20px"
+        src="https://open.spotify.com/embed/track/11dFghVXANMlKmJXsNCbNl"
+        width="100%"
+        height="152"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
+
+</section>
+
+<!-- ========================= -->
+<!-- VIDEO -->
+<!-- ========================= -->
+
+<section id="videoSection" class="reveal">
+
+    <h2>🎥 Video Kenangan</h2>
+
+    <video controls>
+        <source src="assets/videos/video.mp4" type="video/mp4">
+    </video>
+
+</section>
+
+<!-- ========================= -->
+<!-- LONG LETTER -->
+<!-- ========================= -->
+
+<section id="longLetter" class="reveal">
+
+    <div class="paper">
+
+        <h2>Untuk Cintaku ❤️</h2>
+
+        <p>
+            Selamat ulang tahun sayang...
+        </p>
+
+        <p>
+            Terima kasih sudah hadir di hidupku.
+            Terima kasih untuk semua perhatian,
+            kesabaran, dan kasih sayangmu.
+        </p>
+
+        <p>
+            Aku tahu kita tidak selalu melewati hari
+            dengan mudah, tapi aku selalu berharap
+            kita bisa terus bertumbuh bersama.
+        </p>
+
+        <p>
+            Semoga semua impianmu tercapai,
+            kesehatan selalu menyertaimu,
+            dan kebahagiaan tidak pernah jauh darimu.
+        </p>
+
+        <p>
+            Aku mungkin bukan orang yang sempurna,
+            tapi aku akan selalu berusaha menjadi
+            seseorang yang bisa membuatmu tersenyum.
+        </p>
+
+        <p>
+            Happy Birthday, My Love ❤️
+        </p>
+
+        <h3>— Dari seseorang yang sangat mencintaimu.</h3>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- GIFT -->
+<!-- ========================= -->
+
+<section id="giftSection" class="reveal">
+
+    <h2>🎁 Ada Hadiah Untukmu</h2>
+
+    <button id="giftButton">
+        Buka Hadiah
+    </button>
+
+    <div id="giftBox">
+
+        <h1>❤️</h1>
+
+        <h2>I Love You</h2>
+
+        <p>
+            Terima kasih sudah menjadi bagian
+            terindah dalam hidupku.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FINAL -->
+<!-- ========================= -->
+
+<section id="finalSection">
+
+    <div class="overlay">
+
+        <h1>Happy Birthday</h1>
+
+        <h2>My Love ❤️</h2>
+
+        <p>
+            Semoga kita selalu bersama,
+            hari ini, besok, dan selamanya.
+        </p>
+
+    </div>
+
+    <canvas id="fireworks"></canvas>
+
+    <div id="confetti"></div>
+
+</section>
+
+<!-- Floating Heart -->
+<div id="floatingHeartContainer"></div>
+
+<!-- Back To Top -->
+<button id="topButton">
+    ↑
+</button>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer>
+
+    <p>
+        Made with ❤️ especially for you.
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
+```
