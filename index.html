@@ -1,67 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Surprise ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
 
-<!-- LOADING (NOT PAGE) -->
+<!-- LOADING -->
 <div id="loading">
   <div class="loaderHeart">❤️</div>
-  <h2>Preparing Your Surprise...</h2>
+  <p>Preparing Surprise...</p>
 </div>
 
-<!-- BACKGROUND -->
+<!-- BACKGROUND EFFECT -->
 <div class="stars"></div>
 <div id="hearts"></div>
 <div id="petals"></div>
-<div id="confetti"></div>
 
 <!-- MUSIC -->
 <audio id="music" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
-
 <button id="musicBtn">🎵</button>
 
-<!-- HOME (FORCED ACTIVE SAFE) -->
-<section id="home" class="page active">
-  <div class="hero">
-    <div class="bear">🧸</div>
-    <h1>Happy Birthday <br> My Love ❤️</h1>
-    <p>Aku punya hadiah kecil untukmu ✨</p>
-    <button id="openGift">🎁 Open Gift</button>
-  </div>
-</section>
+<!-- PAGE WRAPPER -->
+<div id="pages">
 
-<!-- LETTER -->
-<section id="letter" class="page">
-  <div class="envelope">
-    <div class="envelopeTop"></div>
-    <div class="paper">
-      <h2>Untuk Kamu ❤️</h2>
-      <div id="typingText"></div>
-      <button id="nextMusic" style="display:none;">Lanjut 🎵</button>
-    </div>
-  </div>
-</section>
+  <!-- HOME -->
+  <section class="page active" id="home">
+    <h1>Happy Birthday ❤️</h1>
+    <p>Scroll / Klik untuk lanjut</p>
+    <button class="next" data-next="letter">Open Gift 🎁</button>
+  </section>
 
-<!-- PLAYLIST -->
-<section id="playlist" class="page">
-  <div class="card">
-    <div class="musicEmoji">🎵</div>
-    <h2>Playlist</h2>
-    <p>Musik spesial untuk kamu ❤️</p>
-    <button id="nextFinal">Terakhir ❤️</button>
-  </div>
-</section>
+  <!-- LETTER -->
+  <section class="page" id="letter">
+    <h2>Untuk Kamu ❤️</h2>
+    <p id="typingText"></p>
+    <button class="next" data-next="playlist">Lanjut 🎵</button>
+  </section>
 
-<!-- FINAL -->
-<section id="final" class="page">
-  <div class="card finalCard">
-    <div class="cake">🎂</div>
-    <h1>Happy Birthday</h1>
-    <h3>My Love ❤️</h3>
-    <p>Semoga kamu selalu bahagia ✨</p>
-    <h2>I Love You</h2>
+  <!-- PLAYLIST -->
+  <section class="page" id="playlist">
+    <h2>Playlist 🎵</h2>
+    <p>Musik spesial untuk kamu</p>
+    <button class="next" data-next="final">Next ❤️</button>
+  </section>
+
+  <!-- FINAL -->
+  <section class="page" id="final">
+    <h1>Happy Birthday 🎂</h1>
+    <p>I Love You ❤️</p>
     <button id="restart">Replay 🔄</button>
-  </div>
-</section>
+  </section>
+
+</div>
 
 <script src="script.js"></script>
 </body>
+</html>
