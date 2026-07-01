@@ -1,44 +1,51 @@
-const pages = document.querySelectorAll(".page");
-const buttons = document.querySelectorAll(".next");
-
+const scenes = document.querySelectorAll(".scene");
+const buttons = document.querySelectorAll("button[data-next]");
+const intro = document.getElementById("intro");
 const music = document.getElementById("music");
 const musicBtn = document.getElementById("musicBtn");
 
-const loading = document.getElementById("loading");
+let text = "Aku tidak tahu bagaimana semesta bekerja... tapi aku bersyukur kamu ada di dalamnya ❤️";
+let i = 0;
 
-// LOADING SCREEN
+// INTRO
 window.onload = () => {
   setTimeout(() => {
-    loading.style.display = "none";
-  }, 2000);
+    intro.style.display = "none";
+    music.volume = 0.3;
+    music.play();
+  }, 2500);
 };
 
-// PAGE SWITCH
-function showPage(id) {
-  pages.forEach(p => p.classList.remove("active"));
+// SCENE SWITCH
+function show(id) {
+  scenes.forEach(s => s.classList.remove("active"));
   document.getElementById(id).classList.add("active");
-  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// BUTTON NEXT
+// NEXT BUTTONS
 buttons.forEach(btn => {
   btn.addEventListener("click", () => {
-    showPage(btn.dataset.next);
+    show(btn.dataset.next);
+    if (btn.dataset.next === "s2") typeText();
   });
 });
 
-// MUSIC TOGGLE
-musicBtn.addEventListener("click", () => {
-  if (music.paused) {
-    music.play();
-    musicBtn.textContent = "⏸";
-  } else {
-    music.pause();
-    musicBtn.textContent = "🎵";
+// TYPING EFFECT
+function typeText() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeText, 40);
   }
-});
+}
 
-// RESTART
-document.getElementById("restart").addEventListener("click", () => {
-  showPage("home");
-});
+// MUSIC
+musicBtn.onclick = () => {
+  if (music.paused) music.play();
+  else music.pause();
+};
+
+// REPLAY
+document.getElementById("replay").onclick = () => {
+  show("s1");
+};
