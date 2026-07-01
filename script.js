@@ -1,156 +1,63 @@
-const scenes = document.querySelectorAll(".scene");
-const buttons = document.querySelectorAll("button[data-next]");
+const btn =
+document.getElementById(
+"giftBtn"
+);
 
-const music = document.getElementById("music");
-const musicBtn = document.getElementById("musicBtn");
+btn.onclick=()=>{
 
-const intro = document.getElementById("intro");
-const typingEl = document.getElementById("typingText");
+const hero=
+document.querySelector(
+".hero"
+);
 
-let currentScene = 0;
+hero.classList.add(
+"open"
+);
 
-/* =========================
-   INTRO SYSTEM (SAFE LOAD)
-========================= */
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    if (intro) intro.style.display = "none";
+setTimeout(()=>{
 
-    // music auto play safe (mobile fallback handled)
-    music.volume = 0.4;
-    music.play().catch(() => {
-      console.log("Autoplay blocked - user must click music button");
-    });
+hero.innerHTML=`
 
-    showScene(0);
-  }, 2200);
-});
+<div class="card">
 
-/* =========================
-   SCENE CONTROLLER
-========================= */
-function showScene(index) {
-  scenes.forEach(s => {
-    s.classList.remove("active");
-  });
+<div class="mail">
 
-  currentScene = index;
+💌
 
-  const target = scenes[index];
-  if (target) {
-    target.classList.add("active");
-  }
+</div>
 
-  // reset typing tiap scene
-  if (typingEl) typingEl.innerHTML = "";
-}
+<h2>
 
-/* =========================
-   NEXT BUTTON SYSTEM
-========================= */
-buttons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const nextId = btn.getAttribute("data-next");
+Untuk Kamu ❤️
 
-    const nextIndex = [...scenes].findIndex(
-      s => s.id === nextId
-    );
+</h2>
 
-    if (nextIndex !== -1) {
-      showScene(nextIndex);
+<p>
 
-      // trigger typing kalau scene 2
-      if (nextId === "scene-2") {
-        startTyping();
-      }
-    }
-  });
-});
+Selamat ulang tahun.
 
-/* =========================
-   TYPING EFFECT (SMOOTH CINEMATIC)
-========================= */
-const message =
-  "Aku tidak tahu bagaimana semesta bekerja, tapi aku tahu satu hal... kamu adalah bagian terbaik di dalamnya ❤️";
+<br><br>
 
-let typingIndex = 0;
-let typingRunning = false;
+Terima kasih sudah hadir.
 
-function startTyping() {
-  typingIndex = 0;
-  typingEl.innerHTML = "";
-  typingRunning = true;
+<br><br>
 
-  typeLoop();
-}
+Semoga tahun ini
+lebih bahagia,
+lebih seru,
+dan penuh
+hal baik ✨
 
-function typeLoop() {
-  if (!typingRunning) return;
+</p>
 
-  if (typingIndex < message.length) {
-    typingEl.innerHTML += message.charAt(typingIndex);
-    typingIndex++;
+</div>
 
-    setTimeout(typeLoop, 35); // cinematic speed
-  } else {
-    typingRunning = false;
-  }
-}
+`;
 
-/* =========================
-   MUSIC CONTROL (SAFE MOBILE)
-========================= */
-musicBtn.addEventListener("click", () => {
-  if (music.paused) {
-    music.play();
-    musicBtn.innerText = "⏸";
-  } else {
-    music.pause();
-    musicBtn.innerText = "🎵";
-  }
-});
+hero.classList.remove(
+"open"
+);
 
-/* =========================
-   KEYBOARD / TOUCH SAFE (ANTI BUG HP)
-========================= */
-document.addEventListener("visibilitychange", () => {
-  if (document.hidden) {
-    music.pause();
-  }
-});
+},800);
 
-/* =========================
-   REPLAY SYSTEM
-========================= */
-document.getElementById("restart")?.addEventListener("click", () => {
-  showScene(0);
-
-  setTimeout(() => {
-    startTyping();
-  }, 800);
-});
-
-/* =========================
-   EXTRA CINEMATIC FEEL (SMALL SHAKE ON SCENE CHANGE)
-========================= */
-function cinematicShake() {
-  document.body.style.transform = "scale(1.01)";
-  setTimeout(() => {
-    document.body.style.transform = "scale(1)";
-  }, 200);
-}
-
-/* hook shake to scene changes */
-function showScene(index) {
-  scenes.forEach(s => s.classList.remove("active"));
-  currentScene = index;
-
-  const target = scenes[index];
-  if (target) {
-    target.classList.add("active");
-  }
-
-  cinematicShake();
-
-  if (typingEl) typingEl.innerHTML = "";
-}
+};
