@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>For My Baby ❤️</title>
 
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
@@ -17,9 +21,41 @@
 
 <body>
 
+<!-- LOADING -->
+
+<div id="loading">
+
+<div class="loaderHeart">
+
+❤️
+
+</div>
+
+<h2>
+
+Preparing Your Surprise...
+
+</h2>
+
+<div class="loadingBar">
+
+<div id="progress"></div>
+
+</div>
+
+</div>
+
+<!-- FLOATING -->
+
 <div id="hearts"></div>
+
 <div id="sparkles"></div>
-<div id="confetti"></div>
+
+<div id="petals"></div>
+
+<div id="balloons"></div>
+
+<!-- PAGE 1 -->
 
 <section id="page1" class="page active">
 
@@ -53,9 +89,15 @@ FOR U ❤️
 
 <p>
 
-Aku membuat hadiah kecil ini khusus untukmu.
+Aku membuat sesuatu...
 
-Semoga kamu menyukainya 🤍
+yang hanya bisa diberikan
+
+oleh seseorang
+
+yang benar-benar menyayangimu.
+
+🤍
 
 </p>
 
@@ -69,9 +111,9 @@ Semoga kamu menyukainya 🤍
 
 </section>
 
-<section id="page2" class="page">
+<!-- PAGE 2 -->
 
-<div class="letter">
+<section id="page2" class="page">
 
 <div class="envelope">
 
@@ -97,11 +139,12 @@ Continue ❤️
 
 </div>
 
-</div>
-
 </section>
+<!-- PAGE 3 -->
 
 <section id="page3" class="page">
+
+<div class="memoryBox">
 
 <h2>
 
@@ -109,52 +152,95 @@ Continue ❤️
 
 </h2>
 
-<div class="gallery">
+<div class="slider">
+
+<div class="slide active">
 
 <div class="photo">
 
 📷
 
-<p>Foto 1</p>
+</div>
+
+<h3>First Meet ❤️</h3>
+
+<p>
+
+Di sinilah nanti foto pertama kita.
+
+</p>
 
 </div>
+
+<div class="slide">
 
 <div class="photo">
 
 📷
 
-<p>Foto 2</p>
+</div>
+
+<h3>Beautiful Day 🌸</h3>
+
+<p>
+
+Di sini foto kedua.
+
+</p>
 
 </div>
+
+<div class="slide">
 
 <div class="photo">
 
 📷
 
-<p>Foto 3</p>
+</div>
+
+<h3>Forever 🤍</h3>
+
+<p>
+
+Di sini foto ketiga.
+
+</p>
 
 </div>
 
-<div class="photo">
-
-📷
-
-<p>Foto 4</p>
-
 </div>
+
+<div class="sliderBtn">
+
+<button id="prevBtn">
+
+⬅
+
+</button>
+
+<button id="nextPhotoBtn">
+
+➡
+
+</button>
 
 </div>
 
 <button id="lastBtn">
 
-❤️ Next
+Continue ✨
 
 </button>
 
+</div>
+
 </section>
+
+<!-- PAGE 4 -->
+
 <section id="page4" class="page">
 
-<div class="final-card">
+<div class="card">
 
 <div class="love">
 
@@ -164,7 +250,7 @@ Continue ❤️
 
 <h1>
 
-Happy Birthday ❤️
+Happy Birthday
 
 </h1>
 
@@ -172,34 +258,30 @@ Happy Birthday ❤️
 
 Selamat ulang tahun sayang...
 
-Semoga panjang umur.
-
-Semoga sehat selalu.
-
 Semoga semua impianmu tercapai.
 
-Terima kasih karena sudah hadir
-di hidupku.
+Terima kasih sudah hadir di hidupku.
 
 Aku bersyukur bisa mengenalmu.
 
-Aku akan selalu mendukungmu.
+Aku berharap kita bisa membuat
+lebih banyak kenangan bersama.
 
-Aku akan selalu ada untukmu.
-
-Dan semoga suatu hari nanti
-kita bisa merayakan semua ulang tahun bersama.
-
-I Love You More Than Yesterday,
-Less Than Tomorrow. ❤️
+I Love You Forever ❤️
 
 </p>
 
-<div class="heartRow">
+<div id="countLove">
 
-💖 💕 💗 💓 💞 💘
+❤️ 0
 
 </div>
+
+<button id="loveBtn">
+
+Tap My Heart ❤️
+
+</button>
 
 <button id="restartBtn">
 
@@ -214,4 +296,5 @@ Less Than Tomorrow. ❤️
 <script src="script.js"></script>
 
 </body>
+
 </html>
