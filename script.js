@@ -77,9 +77,9 @@ Semoga kamu selalu sehat.
 
 Semoga kamu selalu bahagia.
 
-Terima kasih sudah hadir di hidupku.
+I hope U all the best.
 
-I Love You Forever ❤️`;
+❤️❤️❤️❤️`;
 
 function typeText(){
 
@@ -112,14 +112,14 @@ const photos=[
 
 const titles=[
 "❤️ My Love ❤️",
-"🌸 Beautiful Day 🌸",
+"🌸 Beautiful Girl 🌸",
 "🤍 Forever 🤍"
 ];
 
 const captions=[
 "Ini yang ultah ya ges yaa.",
-"Terima kasih sudah hadir di hidupku.",
-"Aku berharap kita selalu bersama."
+"Cantik kan?.",
+"Cantik-cantik gini tetap plenger."
 ];
 
 let current=0;
