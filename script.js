@@ -120,6 +120,8 @@ if(index >= message.length){
 
 clearInterval(timer);
 
+nextGallery.style.display = "inline-block";
+
 }
 
 },35);
@@ -132,9 +134,11 @@ clearInterval(timer);
 
 giftBtn.addEventListener("click",()=>{
 
+nextGallery.style.display="none";
+
 showPage(letterPage);
 
-letterPage.scrollTop = 0;
+letterPage.scrollTop=0;
 
 typeWriter();
 
