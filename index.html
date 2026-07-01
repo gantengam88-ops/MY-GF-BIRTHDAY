@@ -1,116 +1,108 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Baby ❤️</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Baby ❤️</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="stars"></div>
-<div class="hearts"></div>
+<div class="floating-hearts"></div>
 
-<!-- HALAMAN PEMBUKA -->
+<!-- HALAMAN 1 -->
 
-<section id="home" class="page active">
+<section id="page1" class="page active">
 
-<div class="card">
+    <div class="card">
 
-<div class="bear">
-🐻
-</div>
+        <div class="emoji">
+            🐻💖
+        </div>
 
-<h3>✨ A Little Surprise ✨</h3>
+        <h3>✨ A Little Surprise ✨</h3>
 
-<h1>
-HEY...
-<br>
-THIS IS
-<br>
-FOR U 💖
-</h1>
+        <h1>
+            HEY...
+            <br>
+            THIS IS
+            <br>
+            FOR U ❤️
+        </h1>
 
-<p>
-Aku membuat sesuatu khusus untukmu...
-Semoga kamu menyukainya 🤍
-</p>
+        <p>
+            Aku membuat sesuatu yang spesial hanya untukmu...
+        </p>
 
-<button id="openBtn">
-🎁 OPEN YOUR GIFT
-</button>
+        <button id="startBtn">
+            🎁 Open Your Gift
+        </button>
 
-</div>
+    </div>
 
 </section>
 
-<!-- HALAMAN SURAT -->
+<!-- HALAMAN 2 -->
 
-<section id="letterPage" class="page">
+<section id="page2" class="page">
 
-<div class="letter">
+    <div class="letter">
 
-<h1>🎂 Happy Birthday ❤️</h1>
+        <h1>💌 Dear My Love</h1>
 
-<p id="typing"></p>
+        <p id="typing"></p>
 
-<img src="1.jpeg" class="photo">
+        <button id="nextBtn">
+            ➜ Next
+        </button>
 
-<button id="nextBtn">
-📸 Next Memory
-</button>
-
-</div>
+    </div>
 
 </section>
 
-<!-- HALAMAN GALERI -->
+<!-- HALAMAN 3 -->
 
-<section id="galleryPage" class="page">
+<section id="page3" class="page">
 
-<h1>📸 Our Memories</h1>
+    <div class="card">
 
-<div class="gallery">
+        <div class="emoji">
+            🎂🎉
+        </div>
 
-<img src="1.jpeg">
-<img src="2.jpeg">
-<img src="3.jpeg">
-<img src="4.jpeg">
+        <h1>Happy Birthday ❤️</h1>
 
-</div>
+        <p>
 
-<button id="lastBtn">
-❤️ One More
-</button>
+            Semoga panjang umur,
+            sehat selalu,
+            bahagia setiap hari,
+            dan semua impianmu tercapai.
+
+            <br><br>
+
+            Terima kasih sudah menjadi bagian terindah dalam hidupku.
+
+            <br><br>
+
+            I Love You Forever ❤️
+
+        </p>
+
+        <button id="restartBtn">
+            🔄 Play Again
+        </button>
+
+    </div>
 
 </section>
-
-<!-- HALAMAN AKHIR -->
-
-<section id="endPage" class="page">
-
-<h1>
-I LOVE YOU ❤️
-</h1>
-
-<p>
-Thank you for coming into my life.
-<br><br>
-Happy Birthday My Love 🎂
-</p>
-
-</section>
-
-<audio id="music" loop>
-<source src="music.mp3" type="audio/mpeg">
-</audio>
 
 <script src="script.js"></script>
 
