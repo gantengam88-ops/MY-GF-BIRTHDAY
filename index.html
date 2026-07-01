@@ -1,271 +1,147 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday ❤️</title>
 
-<title>Happy Birthday ❤️</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <!-- ================= LOADING ================= -->
-
-<div id="loading">
-
-<div class="loaderHeart">
-❤️
-</div>
-
-<h2>Preparing Your Surprise...</h2>
-
+<div id="loading" class="page active">
+  <div class="loaderHeart">❤️</div>
+  <h2>Preparing Your Surprise...</h2>
 </div>
 
 <!-- ================= BACKGROUND ================= -->
-
 <div class="stars"></div>
-
 <div id="hearts"></div>
-
 <div id="petals"></div>
-
 <div id="confetti"></div>
 
 <!-- ================= MUSIC ================= -->
-
 <audio id="music" loop>
-
-<source src="music.mp3" type="audio/mpeg">
-
+  <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<button id="musicBtn">
-
-🎵
-
-</button>
+<button id="musicBtn">🎵</button>
 
 <!-- ================= HOME ================= -->
+<section id="home" class="page">
+  <div class="hero">
 
-<section id="home" class="page active">
+    <div class="bear">🧸</div>
 
-<div class="hero">
+    <h1>
+      Happy Birthday <br>
+      My Love ❤️
+    </h1>
 
-<div class="bear">
+    <p>
+      Aku punya hadiah kecil yang kubuat khusus untukmu.<br>
+      Semoga kamu suka ✨
+    </p>
 
-🧸
+    <button id="openGift">🎁 Open Gift</button>
 
-</div>
-
-<h1>
-
-Happy Birthday
-
-<br>
-
-My Love ❤️
-
-</h1>
-
-<p>
-
-Aku punya hadiah kecil yang kubuat khusus untukmu.
-
-Semoga kamu suka ✨
-
-</p>
-
-<button id="openGift">
-
-🎁 Open Gift
-
-</button>
-
-</div>
-
+  </div>
 </section>
 
 <!-- ================= LETTER ================= -->
-
 <section id="letter" class="page">
+  <div class="envelope">
 
-<div class="envelope">
+    <div class="envelopeTop"></div>
 
-<div class="envelopeTop"></div>
+    <div class="paper">
+      <h2>Untuk Kamu ❤️</h2>
 
-<div class="paper">
+      <div id="typingText"></div>
 
-<h2>
+      <button id="nextMusic">Lanjut 🎵</button>
+    </div>
 
-Untuk Kamu ❤️
-
-</h2>
-
-<div id="typingText"></div>
-
-<button id="nextMusic">
-
-Lanjut 🎵
-
-</button>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
 <!-- ================= PLAYLIST ================= -->
-
 <section id="playlist" class="page">
+  <div class="card">
 
-<div class="card">
+    <div class="musicEmoji">🎵</div>
 
-<div class="musicEmoji">
+    <h2>Playlist Untuk Kamu</h2>
 
-🎵
+    <p>
+      Website ini akan memutar lagu favoritmu.<br>
+      Kalau belum berbunyi, tekan tombol musik di kanan bawah ❤️
+    </p>
 
-</div>
+    <div class="spotifyBox">
+      <iframe
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0XUsuxWHRQd"
+        width="100%"
+        height="152"
+        frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </div>
 
-<h2>
+    <button id="nextFinal">Terakhir ❤️</button>
 
-Playlist Untuk Kamu
-
-</h2>
-
-<p>
-
-Website ini akan memutar lagu favoritmu.
-
-Kalau belum berbunyi,
-
-tekan tombol musik di kanan bawah ❤️
-
-</p>
-
-<div class="spotifyBox">
-
-<iframe style="border-radius:12px"
-
-src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0XUsuxWHRQd"
-
-width="100%"
-
-height="152"
-
-frameBorder="0"
-
-allowfullscreen=""
-
-allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-
-loading="lazy">
-
-</iframe>
-
-</div>
-
-<button id="nextFinal">
-
-Terakhir ❤️
-
-</button>
-
-</div>
-
+  </div>
 </section>
 
 <!-- ================= FINAL ================= -->
-
 <section id="final" class="page">
+  <div class="card finalCard">
 
-<div class="card finalCard">
+    <div class="cake">🎂</div>
 
-<div class="cake">
+    <h1>Happy Birthday</h1>
+    <h3>My Beautiful Girl ❤️</h3>
 
-🎂
+    <p>
+      Semoga di umurmu yang baru,<br>
+      semua impianmu perlahan menjadi nyata.<br><br>
 
-</div>
+      Semoga langkahmu selalu dipenuhi kebahagiaan.<br><br>
 
-<h1>
+      Terima kasih sudah hadir,<br>
+      menjadi seseorang yang sangat berarti.<br><br>
 
-Happy Birthday
+      Aku mungkin tidak selalu sempurna,<br>
+      tetapi aku akan selalu mendoakan yang terbaik untukmu.<br><br>
 
-</h1>
+      Tetaplah tersenyum,<br>
+      tetaplah menjadi dirimu sendiri,<br>
+      karena itu yang membuatmu begitu istimewa. ❤️
+    </p>
 
-<h3>
+    <h2>I Love You Forever</h2>
 
-My Beautiful Girl ❤️
+    <button id="restart">🔄 Replay</button>
 
-</h3>
-
-<p>
-
-Semoga di umurmu yang baru,
-
-semua impianmu perlahan menjadi nyata.
-
-Semoga langkahmu selalu dipenuhi kebahagiaan.
-
-Terima kasih sudah hadir,
-
-menjadi seseorang yang sangat berarti.
-
-Aku mungkin tidak selalu sempurna,
-
-tetapi aku akan selalu mendoakan yang terbaik untukmu.
-
-Tetaplah tersenyum,
-
-tetaplah menjadi dirimu sendiri,
-
-karena itu yang membuatmu begitu istimewa.
-
-❤️
-
-</p>
-
-<h2>
-
-I Love You Forever
-
-</h2>
-
-<button id="restart">
-
-🔄 Replay
-
-</button>
-
-</div>
-
+  </div>
 </section>
 
 <!-- ================= LIGHTBOX ================= -->
-
 <div id="lightbox">
-
-<span id="closeLightbox">
-
-✖
-
-</span>
-
-<img id="lightboxImg">
-
+  <span id="closeLightbox">✖</span>
+  <img id="lightboxImg">
 </div>
 
 <script src="script.js"></script>
-
 </body>
-
 </html>
