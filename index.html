@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
 
 <meta charset="UTF-8">
@@ -19,29 +18,31 @@
 
 <body>
 
-<!-- Loading -->
+<!-- ================= LOADING ================= -->
 
 <div id="loading">
 
-<div class="loader-heart">❤️</div>
+<div class="loaderHeart">
+❤️
+</div>
 
-<h2>Loading your surprise...</h2>
+<h2>Preparing Your Surprise...</h2>
 
 </div>
 
-<!-- Background -->
+<!-- ================= BACKGROUND ================= -->
 
 <div class="stars"></div>
 
-<div class="twinkle"></div>
+<div id="hearts"></div>
 
-<div class="hearts-container"></div>
+<div id="petals"></div>
 
-<div class="petals-container"></div>
+<div id="confetti"></div>
 
-<!-- Music -->
+<!-- ================= MUSIC ================= -->
 
-<audio id="bgMusic" loop>
+<audio id="music" loop>
 
 <source src="music.mp3" type="audio/mpeg">
 
@@ -53,13 +54,15 @@
 
 </button>
 
-<!-- Main -->
+<!-- ================= HOME ================= -->
 
-<section id="hero" class="page active hero">
+<section id="home" class="page active">
+
+<div class="hero">
 
 <div class="bear">
 
-🐻
+🧸
 
 </div>
 
@@ -77,31 +80,29 @@ My Love ❤️
 
 Aku punya hadiah kecil yang kubuat khusus untukmu.
 
-Semoga kamu suka.
-
-✨
+Semoga kamu suka ✨
 
 </p>
 
-<button id="giftBtn">
+<button id="openGift">
 
 🎁 Open Gift
 
 </button>
 
+</div>
+
 </section>
 
-<!-- Letter -->
+<!-- ================= LETTER ================= -->
 
-<section id="letterPage" class="page">
+<section id="letter" class="page">
 
-<div class="card">
+<div class="envelope">
 
-<div class="mail">
+<div class="envelopeTop"></div>
 
-💌
-
-</div>
+<div class="paper">
 
 <h2>
 
@@ -111,59 +112,25 @@ Untuk Kamu ❤️
 
 <div id="typingText"></div>
 
-<br>
+<button id="nextMusic">
 
-<button id="nextGallery">
-
-Lanjut 📸
+Lanjut 🎵
 
 </button>
 
 </div>
 
-</section>
-
-<!-- Gallery -->
-
-<section id="galleryPage" class="page">
-
-<div class="card">
-
-<h2>
-
-Our Memories 📸
-
-</h2>
-
-<div class="gallery">
-
-<img src="images/1.jpg" alt="Foto 1">
-
-<img src="images/2.jpg" alt="Foto 2">
-
-<img src="images/3.jpg" alt="Foto 3">
-
-<img src="images/4.jpg" alt="Foto 4">
-
-</div>
-
-<button id="nextPlaylist">
-
-Selanjutnya 🎵
-
-</button>
-
 </div>
 
 </section>
 
-<!-- Playlist -->
+<!-- ================= PLAYLIST ================= -->
 
-<section id="playlistPage" class="page">
+<section id="playlist" class="page">
 
 <div class="card">
 
-<div class="musicIcon">
+<div class="musicEmoji">
 
 🎵
 
@@ -177,11 +144,35 @@ Playlist Untuk Kamu
 
 <p>
 
-Klik tombol musik di kanan bawah.
+Website ini akan memutar lagu favoritmu.
 
-Semoga lagu-lagunya menemani hari spesialmu ❤️
+Kalau belum berbunyi,
+
+tekan tombol musik di kanan bawah ❤️
 
 </p>
+
+<div class="spotifyBox">
+
+<iframe style="border-radius:12px"
+
+src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0XUsuxWHRQd"
+
+width="100%"
+
+height="152"
+
+frameBorder="0"
+
+allowfullscreen=""
+
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+
+loading="lazy">
+
+</iframe>
+
+</div>
 
 <button id="nextFinal">
 
@@ -193,23 +184,23 @@ Terakhir ❤️
 
 </section>
 
-<!-- Final -->
+<!-- ================= FINAL ================= -->
 
-<section id="finalPage" class="page">
+<section id="final" class="page">
 
 <div class="card finalCard">
 
-<h1>
+<div class="cake">
 
 🎂
 
-</h1>
+</div>
 
-<h2>
+<h1>
 
 Happy Birthday
 
-</h2>
+</h1>
 
 <h3>
 
@@ -219,31 +210,39 @@ My Beautiful Girl ❤️
 
 <p>
 
-Semoga semua impianmu tercapai.
+Semoga di umurmu yang baru,
 
-Semoga semua kesedihanmu berubah menjadi kebahagiaan.
+semua impianmu perlahan menjadi nyata.
 
-Semoga senyummu selalu ada setiap hari.
+Semoga langkahmu selalu dipenuhi kebahagiaan.
 
-Terima kasih sudah menjadi bagian dari hidupku.
+Terima kasih sudah hadir,
 
-Aku bersyukur bisa mengenalmu.
+menjadi seseorang yang sangat berarti.
 
-Aku akan selalu mendoakan yang terbaik untukmu.
+Aku mungkin tidak selalu sempurna,
+
+tetapi aku akan selalu mendoakan yang terbaik untukmu.
+
+Tetaplah tersenyum,
+
+tetaplah menjadi dirimu sendiri,
+
+karena itu yang membuatmu begitu istimewa.
 
 ❤️
 
 </p>
 
-<h1>
+<h2>
 
 I Love You Forever
 
-</h1>
+</h2>
 
 <button id="restart">
 
-🔄 Lihat Lagi
+🔄 Replay
 
 </button>
 
@@ -251,7 +250,7 @@ I Love You Forever
 
 </section>
 
-<!-- Lightbox -->
+<!-- ================= LIGHTBOX ================= -->
 
 <div id="lightbox">
 
@@ -270,4 +269,3 @@ I Love You Forever
 </body>
 
 </html>
-```
