@@ -1,13 +1,18 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday ❤️</title>
 
-<title>For My Bby ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 
@@ -15,22 +20,68 @@
 
 <body>
 
+<!-- Loading -->
+
+<div id="loading">
+
+<div class="loader-heart">❤️</div>
+
+<h2>Loading your surprise...</h2>
+
+</div>
+
+<!-- Background -->
+
 <div class="stars"></div>
 
-<div class="hero">
+<div class="twinkle"></div>
+
+<div class="hearts-container"></div>
+
+<div class="petals-container"></div>
+
+<!-- Music -->
+
+<audio id="bgMusic" loop>
+
+<source src="music.mp3" type="audio/mpeg">
+
+</audio>
+
+<button id="musicBtn">
+
+🎵
+
+</button>
+
+<!-- Main -->
+
+<section id="hero" class="page active">
 
 <div class="bear">
+
 🐻
+
 </div>
 
 <h1>
+
 Happy Birthday
+
 <br>
+
 My Love ❤️
+
 </h1>
 
 <p>
-Aku bikin hadiah kecil buat kamu ✨
+
+Aku punya hadiah kecil yang kubuat khusus untukmu.
+
+Semoga kamu suka.
+
+✨
+
 </p>
 
 <button id="giftBtn">
@@ -39,6 +90,178 @@ Aku bikin hadiah kecil buat kamu ✨
 
 </button>
 
+</section>
+
+<!-- Letter -->
+
+<section id="letterPage" class="page">
+
+<div class="card">
+
+<div class="mail">
+
+💌
+
+</div>
+
+<h2>
+
+Untuk Kamu ❤️
+
+</h2>
+
+<p id="typingText"></p>
+
+<button id="nextGallery">
+
+Lanjut 📸
+
+</button>
+
+</div>
+
+</section>
+
+<!-- Gallery -->
+
+<section id="galleryPage" class="page">
+
+<div class="card">
+
+<h2>
+
+Our Memories 📸
+
+</h2>
+
+<div class="gallery">
+
+<img src="images/1.jpg" alt="Foto 1">
+
+<img src="images/2.jpg" alt="Foto 2">
+
+<img src="images/3.jpg" alt="Foto 3">
+
+<img src="images/4.jpg" alt="Foto 4">
+
+</div>
+
+<button id="nextPlaylist">
+
+Selanjutnya 🎵
+
+</button>
+
+</div>
+
+</section>
+
+<!-- Playlist -->
+
+<section id="playlistPage" class="page">
+
+<div class="card">
+
+<div class="musicIcon">
+
+🎵
+
+</div>
+
+<h2>
+
+Playlist Untuk Kamu
+
+</h2>
+
+<p>
+
+Klik tombol musik di kanan bawah.
+
+Semoga lagu-lagunya menemani hari spesialmu ❤️
+
+</p>
+
+<button id="nextFinal">
+
+Terakhir ❤️
+
+</button>
+
+</div>
+
+</section>
+
+<!-- Final -->
+
+<section id="finalPage" class="page">
+
+<div class="card finalCard">
+
+<h1>
+
+🎂
+
+</h1>
+
+<h2>
+
+Happy Birthday
+
+</h2>
+
+<h3>
+
+My Beautiful Girl ❤️
+
+</h3>
+
+<p>
+
+Semoga semua impianmu tercapai.
+
+Semoga semua kesedihanmu berubah menjadi kebahagiaan.
+
+Semoga senyummu selalu ada setiap hari.
+
+Terima kasih sudah menjadi bagian dari hidupku.
+
+Aku bersyukur bisa mengenalmu.
+
+Aku akan selalu mendoakan yang terbaik untukmu.
+
+❤️
+
+</p>
+
+<h1>
+
+I Love You Forever
+
+</h1>
+
+<button id="restart">
+
+🔄 Lihat Lagi
+
+</button>
+
+</div>
+
+</section>
+
+<!-- Lightbox -->
+
+<div id="lightbox">
+
+<span id="closeLightbox">
+
+✖
+
+</span>
+
+<img id="lightboxImg">
+
 </div>
 
 <script src="script.js"></script>
@@ -46,3 +269,4 @@ Aku bikin hadiah kecil buat kamu ✨
 </body>
 
 </html>
+```
