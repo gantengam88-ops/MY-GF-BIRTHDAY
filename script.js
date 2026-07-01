@@ -1,104 +1,72 @@
-const home = document.getElementById("home");
-const letterPage = document.getElementById("letterPage");
-const galleryPage = document.getElementById("galleryPage");
-const endPage = document.getElementById("endPage");
+const page1 = document.getElementById("page1");
+const page2 = document.getElementById("page2");
+const page3 = document.getElementById("page3");
 
-const openBtn = document.getElementById("openBtn");
+const startBtn = document.getElementById("startBtn");
 const nextBtn = document.getElementById("nextBtn");
-const lastBtn = document.getElementById("lastBtn");
+const restartBtn = document.getElementById("restartBtn");
 
 const typing = document.getElementById("typing");
-const music = document.getElementById("music");
 
-const message = `Happy Birthday Sayang ❤️
+const text = `Happy Birthday Sayang ❤️
 
-Hari ini adalah hari spesialmu.
+Hari ini adalah hari yang spesial.
+
+Semoga semua impianmu tercapai.
+
+Semoga kamu selalu sehat, selalu tersenyum, dan selalu bahagia.
 
 Terima kasih sudah hadir dalam hidupku.
 
-Semoga semua impianmu tercapai, selalu sehat, selalu bahagia, dan selalu tersenyum.
-
-Aku bersyukur bisa mengenalmu.
-
-Aku berharap kita bisa terus membuat banyak kenangan indah bersama.
+Aku sangat bersyukur bisa mengenalmu.
 
 I Love You Forever ❤️`;
 
-function showPage(page){
+function show(page){
     document.querySelectorAll(".page").forEach(p=>{
         p.classList.remove("active");
     });
     page.classList.add("active");
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
 }
 
-function typeText(text){
+function typeWriter(){
+
     typing.innerHTML="";
     let i=0;
 
-    function typingEffect(){
+    function write(){
+
         if(i<text.length){
-            typing.innerHTML+=text.charAt(i);
+
+            typing.innerHTML += text.charAt(i);
             i++;
-            setTimeout(typingEffect,35);
+
+            setTimeout(write,40);
+
         }
+
     }
 
-    typingEffect();
+    write();
+
 }
 
-openBtn.onclick=()=>{
+startBtn.onclick=()=>{
 
-    showPage(letterPage);
+    show(page2);
 
-    music.play().catch(()=>{});
+    typeWriter();
 
-    typeText(message);
-
-};
+}
 
 nextBtn.onclick=()=>{
 
-    showPage(galleryPage);
+    show(page3);
 
-};
+}
 
-lastBtn.onclick=()=>{
+restartBtn.onclick=()=>{
 
-    showPage(endPage);
-
-    confetti();
-
-};
-
-function confetti(){
-
-    for(let i=0;i<120;i++){
-
-        const heart=document.createElement("div");
-
-        heart.innerHTML=["💖","💕","💗","💝","🎉","✨"][Math.floor(Math.random()*6)];
-
-        heart.style.position="fixed";
-        heart.style.left=Math.random()*100+"vw";
-        heart.style.top="-30px";
-        heart.style.fontSize=(18+Math.random()*20)+"px";
-        heart.style.transition="4s linear";
-
-        document.body.appendChild(heart);
-
-        setTimeout(()=>{
-            heart.style.top="110vh";
-            heart.style.transform=`rotate(${Math.random()*720}deg)`;
-        },50);
-
-        setTimeout(()=>{
-            heart.remove();
-        },4500);
-
-    }
+    location.reload();
 
 }
