@@ -1,1280 +1,465 @@
 /* ==========================================
    HAPPY BIRTHDAY WEBSITE
-   STYLE.CSS
-   PART 1
+   STYLE.CSS (CLEAN + MATCH HTML)
 ========================================== */
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html{
-scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-
-font-family:'Poppins',sans-serif;
-
-background:linear-gradient(180deg,#ffe3ef,#fff8fc);
-
-color:#444;
-
-overflow-x:hidden;
-
-min-height:100vh;
-
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #ffe3ef, #fff8fc);
+  color: #444;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
-/* ================= PAGE ================= */
+/* ================= PAGE SYSTEM ================= */
 
-.page{
+.page {
+  display: none;
+  min-height: 100vh;
+  width: 100%;
+  padding: 40px 20px;
 
-display:none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-min-height:100vh;
-
-width:100%;
-
-padding:40px 20px;
-
-justify-content:center;
-
-align-items:center;
-
-flex-direction:column;
-
-position:relative;
-
+  position: relative;
+  z-index: 2;
 }
 
-.page.active{
-
-display:flex;
-
-animation:fade .7s;
-
+.page.active {
+  display: flex;
+  animation: fade .7s;
 }
 
 /* ================= LOADING ================= */
 
-#loading{
+#loading {
+  position: fixed;
+  inset: 0;
+  background: white;
 
-position:fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-inset:0;
-
-background:white;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-flex-direction:column;
-
-z-index:99999;
-
-transition:1s;
-
+  z-index: 99999;
+  transition: 1s;
 }
 
-#loading.hide{
-
-opacity:0;
-
-visibility:hidden;
-
+#loading.hide {
+  opacity: 0;
+  visibility: hidden;
 }
 
-.loaderHeart{
-
-font-size:90px;
-
-animation:beat 1s infinite;
-
+.loaderHeart {
+  font-size: 90px;
+  animation: beat 1s infinite;
 }
 
-#loading h2{
-
-margin-top:20px;
-
-color:#ff5c95;
-
+#loading h2 {
+  margin-top: 20px;
+  color: #ff5c95;
 }
 
 /* ================= BACKGROUND ================= */
 
-.stars{
-
-position:fixed;
-
-inset:0;
-
-background:
-
-radial-gradient(white 1px,transparent 1px);
-
-background-size:80px 80px;
-
-opacity:.35;
-
-pointer-events:none;
-
-z-index:0;
-
-animation:twinkle 6s infinite;
-
+.stars {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: .35;
+  pointer-events: none;
+  z-index: 0;
+  animation: twinkle 6s infinite;
 }
 
 #hearts,
 #petals,
-#confetti{
-
-position:fixed;
-
-inset:0;
-
-pointer-events:none;
-
-overflow:hidden;
-
-z-index:1;
-
+#confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
 }
 
 /* ================= HERO ================= */
 
-.hero{
-
-text-align:center;
-
-z-index:5;
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
+.hero {
+  text-align: center;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.bear{
-
-font-size:130px;
-
-animation:float 3s ease-in-out infinite;
-
-filter:drop-shadow(0 20px 25px rgba(0,0,0,.15));
-
+.bear {
+  font-size: 130px;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 20px 25px rgba(0,0,0,.15));
+  cursor: default;
+  transition: .4s;
 }
 
-.hero h1{
-
-font-family:'Dancing Script',cursive;
-
-font-size:72px;
-
-margin-top:20px;
-
-background:linear-gradient(
-90deg,
-#ff5d96,
-#ff95be,
-#ff5d96);
-
-background-size:300%;
-
--webkit-background-clip:text;
-
--webkit-text-fill-color:transparent;
-
-animation:gradient 6s linear infinite;
-
+.bear:hover {
+  transform: scale(1.08);
 }
 
-.hero p{
+.hero h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 72px;
+  margin-top: 20px;
 
-max-width:700px;
+  background: linear-gradient(90deg, #ff5d96, #ff95be, #ff5d96);
+  background-size: 300%;
 
-margin-top:20px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
-font-size:20px;
+  animation: gradient 6s linear infinite;
+}
 
-line-height:1.8;
-
-color:#666;
-
+.hero p {
+  max-width: 700px;
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 1.8;
+  color: #666;
 }
 
 /* ================= BUTTON ================= */
 
-button{
+button {
+  margin-top: 30px;
+  padding: 18px 42px;
 
-margin-top:30px;
+  border: none;
+  border-radius: 999px;
 
-padding:18px 42px;
+  background: #ff75a8;
+  color: white;
 
-border:none;
+  font-size: 18px;
+  font-weight: 600;
 
-border-radius:999px;
+  cursor: pointer;
+  transition: .3s;
 
-background:#ff75a8;
-
-color:white;
-
-font-size:18px;
-
-font-weight:600;
-
-cursor:pointer;
-
-transition:.3s;
-
-box-shadow:
-
-0 15px 35px rgba(255,120,170,.35);
-
+  box-shadow: 0 15px 35px rgba(255,120,170,.35);
 }
 
-button:hover{
-
-transform:translateY(-5px);
-
-background:#ff4b90;
-
+button:hover {
+  transform: translateY(-5px);
+  background: #ff4b90;
+  box-shadow: 0 20px 45px rgba(255,90,150,.45);
 }
 
-button:active{
-
-transform:scale(.96);
-
+button:active {
+  transform: scale(.96);
 }
 
 /* ================= MUSIC ================= */
 
-#musicBtn{
+#musicBtn {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
 
-position:fixed;
+  width: 70px;
+  height: 70px;
 
-right:25px;
+  border-radius: 50%;
+  font-size: 28px;
 
-bottom:25px;
+  z-index: 999;
 
-width:70px;
+  box-shadow: 0 15px 35px rgba(0,0,0,.18);
+  transition: .3s;
+}
 
-height:70px;
-
-border-radius:50%;
-
-font-size:28px;
-
-z-index:999;
-
+#musicBtn:hover {
+  transform: scale(1.12);
 }
 
 /* ================= ENVELOPE ================= */
 
-.envelope{
+.envelope {
+  position: relative;
+  width: 700px;
+  max-width: 95%;
 
-position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-width:700px;
-
-max-width:95%;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
+  padding-top: 70px;
 }
 
-.paper{
+.envelopeTop {
+  position: absolute;
+  top: -15px;
+  left: 0;
 
-background:white;
+  width: 100%;
+  height: 120px;
 
-width:100%;
+  background: #ff9bc1;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
 
-padding:45px;
-
-border-radius:25px;
-
-box-shadow:
-
-0 25px 70px rgba(255,120,170,.25);
-
-text-align:center;
-
-position:relative;
-
-z-index:2;
-
-animation:pop .8s;
-
+  z-index: 3;
+  transform-origin: top;
+  animation: openEnvelope 1.5s forwards;
 }
 
-.envelopeTop{
+.paper {
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(12px);
 
-position:absolute;
+  width: 100%;
+  padding: 45px;
 
-top:-15px;
+  border-radius: 25px;
 
-left:0;
+  box-shadow: 0 25px 70px rgba(255,120,170,.25);
 
-width:100%;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 
-height:120px;
-
-background:#ff9bc1;
-
-clip-path:polygon(0 0,50% 100%,100% 0);
-
-z-index:3;
-
-animation:openEnvelope 1.5s forwards;
-
-transform-origin:top;
-
+  animation: pop .8s;
 }
 
-.paper h2{
-
-font-size:40px;
-
-margin-bottom:20px;
-
-color:#ff5d96;
-
+.paper h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #ff5d96;
 }
 
-#typingText{
+/* ================= TYPING ================= */
 
-min-height:280px;
-
-font-size:19px;
-
-line-height:2;
-
-white-space:pre-line;
-
-padding-bottom:25px;
-
+#typingText {
+  min-height: 280px;
+  font-size: 19px;
+  line-height: 2;
+  white-space: pre-line;
+  text-align: left;
+  padding-bottom: 25px;
 }
 
 /* ================= CARD ================= */
 
-.card{
+.card {
+  width: 720px;
+  max-width: 95%;
 
-width:720px;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(12px);
 
-max-width:95%;
+  padding: 45px;
+  border-radius: 30px;
 
-background:white;
+  text-align: center;
 
-padding:45px;
+  box-shadow: 0 25px 70px rgba(255,120,170,.25);
 
-border-radius:30px;
-
-text-align:center;
-
-box-shadow:
-
-0 25px 70px rgba(255,120,170,.25);
-
-animation:pop .7s;
-
+  animation: pop .7s;
 }
 
-.card h2{
-
-font-size:38px;
-
-color:#ff5d96;
-
-margin-bottom:20px;
-
+.card h2 {
+  font-size: 38px;
+  color: #ff5d96;
+  margin-bottom: 20px;
 }
 
-.card p{
-
-line-height:2;
-
-font-size:18px;
-
-color:#666;
-
+.card p {
+  line-height: 2;
+  font-size: 18px;
+  color: #666;
 }
 
-.musicEmoji{
-
-font-size:90px;
-
-margin-bottom:20px;
-
-animation:bounce 2s infinite;
-
+.musicEmoji {
+  font-size: 90px;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
 }
 
-.cake{
-
-font-size:90px;
-
-margin-bottom:20px;
-
+.cake {
+  font-size: 90px;
+  margin-bottom: 20px;
 }
 
-.spotifyBox{
-
-margin-top:30px;
-
-border-radius:20px;
-
-overflow:hidden;
-
+.spotifyBox {
+  margin-top: 30px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,.12);
 }
-/* ==========================================
-   STYLE.CSS
-   PART 2
-========================================== */
 
 /* ================= FINAL ================= */
 
-.finalCard h1{
-
-font-size:70px;
-
-margin-bottom:15px;
-
+.finalCard h1 {
+  font-size: 70px;
+  margin-bottom: 15px;
 }
 
-.finalCard h2{
-
-font-size:45px;
-
-margin-top:20px;
-
+.finalCard h2 {
+  font-size: 45px;
+  margin-top: 20px;
 }
 
-.finalCard h3{
-
-font-family:'Dancing Script',cursive;
-
-font-size:30px;
-
-margin-bottom:20px;
-
-color:#ff5c95;
-
+.finalCard h3 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #ff5c95;
 }
 
-.finalCard p{
-
-max-width:650px;
-
-margin:auto;
-
-line-height:2;
-
+.finalCard p {
+  max-width: 650px;
+  margin: auto;
+  line-height: 2;
 }
 
-/* ================= HEART ================= */
+/* ================= EFFECTS ================= */
 
-.heart{
-
-position:fixed;
-
-bottom:-50px;
-
-font-size:24px;
-
-pointer-events:none;
-
-animation:heartFly linear forwards;
-
-z-index:2;
-
-}
-
-/* ================= PETAL ================= */
-
-.petal{
-
-position:fixed;
-
-top:-30px;
-
-font-size:20px;
-
-pointer-events:none;
-
-animation:petalFall linear forwards;
-
-z-index:2;
-
-}
-
-/* ================= CONFETTI ================= */
-
-.confetti{
-
-position:fixed;
-
-width:10px;
-
-height:10px;
-
-pointer-events:none;
-
-animation:confettiFall linear forwards;
-
-z-index:3;
-
+.heart,
+.petal,
+.confetti {
+  position: fixed;
+  pointer-events: none;
+  z-index: 2;
 }
 
 /* ================= LIGHTBOX ================= */
 
-#lightbox{
+#lightbox {
+  position: fixed;
+  inset: 0;
 
-position:fixed;
+  background: rgba(0,0,0,.9);
 
-inset:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-background:rgba(0,0,0,.9);
+  opacity: 0;
+  visibility: hidden;
 
-display:flex;
+  transition: .4s;
 
-justify-content:center;
-
-align-items:center;
-
-opacity:0;
-
-visibility:hidden;
-
-transition:.4s;
-
-z-index:99999;
-
-}
-
-#lightbox.show{
-
-opacity:1;
-
-visibility:visible;
-
-}
-
-#lightbox img{
-
-max-width:90%;
-
-max-height:90%;
-
-border-radius:20px;
-
-box-shadow:
-
-0 25px 60px rgba(0,0,0,.45);
-
-}
-
-#closeLightbox{
-
-position:absolute;
-
-top:25px;
-
-right:30px;
-
-font-size:45px;
-
-color:white;
-
-cursor:pointer;
-
-}
-
-/* ================= SCROLL ================= */
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:#ff8db9;
-
-border-radius:999px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#ffe7f2;
-
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
-
-.hero h1{
-
-font-size:56px;
-
-}
-
-.hero p{
-
-font-size:18px;
-
-}
-
-.paper{
-
-padding:35px;
-
-}
-
-.card{
-
-padding:35px;
-
-}
-
-}
-
-@media(max-width:600px){
-
-.hero h1{
-
-font-size:42px;
-
-}
-
-.hero p{
-
-font-size:16px;
-
-}
-
-.bear{
-
-font-size:90px;
-
-}
-
-.paper{
-
-padding:25px;
-
-}
-
-.card{
-
-padding:25px;
-
-}
-
-.paper h2{
-
-font-size:30px;
-
-}
-
-.card h2{
-
-font-size:30px;
-
-}
-
-#typingText{
-
-font-size:16px;
-
-line-height:1.8;
-
-}
-
-button{
-
-width:100%;
-
-}
-
-#musicBtn{
-
-width:60px;
-
-height:60px;
-
-font-size:24px;
-
-}
-
-}
-
-/* ================= ANIMATION ================= */
-
-@keyframes beat{
-
-0%{transform:scale(1);}
-50%{transform:scale(1.2);}
-100%{transform:scale(1);}
-
-}
-
-@keyframes bounce{
-
-0%{transform:translateY(0);}
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0);}
-
-}
-
-@keyframes float{
-
-0%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
-100%{transform:translateY(0);}
-
-}
-
-@keyframes pop{
-
-0%{
-
-opacity:0;
-
-transform:scale(.8);
-
-}
-
-100%{
-
-opacity:1;
-
-transform:scale(1);
-
-}
-
-}
-
-@keyframes fade{
-
-0%{
-
-opacity:0;
-
-}
-
-100%{
-
-opacity:1;
-
-}
-
-}
-
-@keyframes gradient{
-
-0%{
-
-background-position:0%;
-
-}
-
-100%{
-
-background-position:300%;
-
-}
-
-}
-
-@keyframes twinkle{
-
-0%{opacity:.2;}
-
-50%{opacity:.6;}
-
-100%{opacity:.2;}
-
-}
-
-@keyframes openEnvelope{
-
-0%{
-
-transform:rotateX(0deg);
-
-}
-
-100%{
-
-transform:rotateX(180deg);
-
-}
-
-}
-
-@keyframes heartFly{
-
-0%{
-
-transform:translateY(0) rotate(0);
-
-opacity:1;
-
-}
-
-100%{
-
-transform:translateY(-120vh) rotate(360deg);
-
-opacity:0;
-
-}
-
-}
-
-@keyframes petalFall{
-
-0%{
-
-transform:translateY(-20px) rotate(0deg);
-
-opacity:1;
-
-}
-
-100%{
-
-transform:translateY(120vh) rotate(720deg);
-
-opacity:0;
-
-}
-
-}
-
-@keyframes confettiFall{
-
-0%{
-
-transform:translateY(-100px) rotate(0deg);
-
-opacity:1;
-
-}
-
-100%{
-
-transform:translateY(120vh) rotate(720deg);
-
-opacity:0;
-
-}
-
-}
-/* ==========================================
-   STYLE.CSS
-   PART 3 (FINAL)
-========================================== */
-
-/* Glass Effect */
-
-.card,
-.paper{
-
-backdrop-filter:blur(12px);
-
-background:rgba(255,255,255,.92);
-
-}
-
-/* Gradient Text */
-
-.hero h1,
-.paper h2,
-.card h2,
-.finalCard h1,
-.finalCard h2{
-
-background:linear-gradient(
-90deg,
-#ff5c95,
-#ff8fb8,
-#ff5c95);
-
-background-size:300%;
-
--webkit-background-clip:text;
-
--webkit-text-fill-color:transparent;
-
-animation:gradient 8s linear infinite;
-
-}
-
-/* Glow */
-
-button{
-
-transition:
-.35s,
-box-shadow .35s,
-transform .35s;
-
-}
-
-button:hover{
-
-box-shadow:
-0 20px 45px
-rgba(255,90,150,.45);
-
-filter:brightness(105%);
-
-}
-
-/* Bear Hover */
-
-.bear{
-
-cursor:default;
-
-transition:.4s;
-
-}
-
-.bear:hover{
-
-transform:scale(1.08);
-
-}
-
-/* Music Button */
-
-#musicBtn{
-
-box-shadow:
-0 15px 35px rgba(0,0,0,.18);
-
-transition:.3s;
-
-}
-
-#musicBtn:hover{
-
-transform:scale(1.12);
-
-}
-
-/* Floating Animation */
-
-.hero,
-.paper,
-.card{
-
-position:relative;
-
-z-index:5;
-
-}
-
-/* Decorative Glow */
-
-body::before{
-
-content:"";
-
-position:fixed;
-
-top:-250px;
-
-left:-250px;
-
-width:500px;
-
-height:500px;
-
-background:
-
-radial-gradient(
-
-rgba(255,180,210,.45),
-
-transparent 70%
-
-);
-
-pointer-events:none;
-
-z-index:0;
-
-animation:glowMove 12s linear infinite alternate;
-
-}
-
-body::after{
-
-content:"";
-
-position:fixed;
-
-right:-250px;
-
-bottom:-250px;
-
-width:500px;
-
-height:500px;
-
-background:
-
-radial-gradient(
-
-rgba(255,220,235,.55),
-
-transparent 70%
-
-);
-
-pointer-events:none;
-
-z-index:0;
-
-animation:glowMove2 14s linear infinite alternate;
-
-}
-
-/* Typing */
-
-#typingText{
-
-overflow-wrap:break-word;
-
-word-break:break-word;
-
-text-align:left;
-
+  z-index: 99999;
 }
 
-/* Envelope */
-
-.envelope{
-
-padding-top:70px;
-
-}
-
-/* Spotify */
-
-.spotifyBox{
-
-margin-top:30px;
-
-border-radius:18px;
-
-overflow:hidden;
-
-box-shadow:
-
-0 15px 35px rgba(0,0,0,.12);
-
-}
-
-/* Footer Space */
-
-.page{
-
-padding-bottom:80px;
-
-}
-
-/* Fade Helpers */
-
-.fadeIn{
-
-animation:fade .7s forwards;
-
-}
-
-.fadeOut{
-
-animation:fadeOut .5s forwards;
-
-}
-
-/* Extra Animation */
-
-@keyframes glowMove{
-
-0%{
-
-transform:translate(0,0);
-
-}
-
-100%{
-
-transform:translate(150px,80px);
-
-}
-
-}
-
-@keyframes glowMove2{
-
-0%{
-
-transform:translate(0,0);
-
-}
-
-100%{
-
-transform:translate(-150px,-80px);
-
-}
-
-}
-
-@keyframes fadeOut{
-
-0%{
-
-opacity:1;
-
-}
-
-100%{
-
-opacity:0;
-
-}
-
-}
-
-/* Desktop */
-
-@media(min-width:1200px){
-
-.hero h1{
-
-font-size:82px;
-
-}
-
-.paper{
-
-width:760px;
-
-}
-
-.card{
-
-width:760px;
-
-}
-
+#lightbox.show {
+  opacity: 1;
+  visibility: visible;
 }
 
-/* Tablet */
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
 
-@media(max-width:768px){
-
-.paper{
-
-padding:30px;
-
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0,0,0,.45);
 }
 
-.card{
+#closeLightbox {
+  position: absolute;
+  top: 25px;
+  right: 30px;
 
-padding:30px;
+  font-size: 45px;
+  color: white;
 
+  cursor: pointer;
 }
 
-.hero h1{
+/* ================= ANIMATIONS ================= */
 
-font-size:48px;
-
+@keyframes beat {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
 }
-
-.hero p{
-
-font-size:17px;
 
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
-/* Small Phone */
-
-@media(max-width:480px){
-
-.hero h1{
-
-font-size:36px;
-
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
-
-.paper{
-
-padding:22px;
-
-border-radius:20px;
 
+@keyframes gradient {
+  0% { background-position: 0%; }
+  100% { background-position: 300%; }
 }
 
-.card{
-
-padding:22px;
-
-border-radius:20px;
-
+@keyframes twinkle {
+  0%,100% { opacity: .2; }
+  50% { opacity: .6; }
 }
 
-.paper h2{
-
-font-size:28px;
-
+@keyframes openEnvelope {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(180deg); }
 }
-
-.card h2{
 
-font-size:28px;
-
+@keyframes pop {
+  from { opacity: 0; transform: scale(.8); }
+  to { opacity: 1; transform: scale(1); }
 }
-
-button{
-
-padding:15px 22px;
 
-font-size:16px;
+/* ================= RESPONSIVE ================= */
 
-width:100%;
-
+@media(max-width: 900px) {
+  .hero h1 { font-size: 56px; }
+  .hero p { font-size: 18px; }
+  .paper, .card { padding: 35px; }
 }
-
-#typingText{
 
-font-size:16px;
+@media(max-width: 600px) {
+  .hero h1 { font-size: 42px; }
+  .hero p { font-size: 16px; }
 
-line-height:1.9;
+  .bear { font-size: 90px; }
 
-}
+  .paper, .card { padding: 25px; }
 
+  .paper h2 { font-size: 30px; }
+  .card h2 { font-size: 30px; }
+
+  button {
+    width: 100%;
+  }
+
+  #musicBtn {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  #typingText {
+    font-size: 16px;
+    line-height: 1.8;
+  }
 }
-
-/* END */
