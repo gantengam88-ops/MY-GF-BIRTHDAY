@@ -1,51 +1,156 @@
 const scenes = document.querySelectorAll(".scene");
 const buttons = document.querySelectorAll("button[data-next]");
-const intro = document.getElementById("intro");
+
 const music = document.getElementById("music");
 const musicBtn = document.getElementById("musicBtn");
 
-let text = "Aku tidak tahu bagaimana semesta bekerja... tapi aku bersyukur kamu ada di dalamnya ❤️";
-let i = 0;
+const intro = document.getElementById("intro");
+const typingEl = document.getElementById("typingText");
 
-// INTRO
-window.onload = () => {
+let currentScene = 0;
+
+/* =========================
+   INTRO SYSTEM (SAFE LOAD)
+========================= */
+window.addEventListener("load", () => {
   setTimeout(() => {
-    intro.style.display = "none";
-    music.volume = 0.3;
-    music.play();
-  }, 2500);
-};
+    if (intro) intro.style.display = "none";
 
-// SCENE SWITCH
-function show(id) {
-  scenes.forEach(s => s.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
+    // music auto play safe (mobile fallback handled)
+    music.volume = 0.4;
+    music.play().catch(() => {
+      console.log("Autoplay blocked - user must click music button");
+    });
+
+    showScene(0);
+  }, 2200);
+});
+
+/* =========================
+   SCENE CONTROLLER
+========================= */
+function showScene(index) {
+  scenes.forEach(s => {
+    s.classList.remove("active");
+  });
+
+  currentScene = index;
+
+  const target = scenes[index];
+  if (target) {
+    target.classList.add("active");
+  }
+
+  // reset typing tiap scene
+  if (typingEl) typingEl.innerHTML = "";
 }
 
-// NEXT BUTTONS
+/* =========================
+   NEXT BUTTON SYSTEM
+========================= */
 buttons.forEach(btn => {
   btn.addEventListener("click", () => {
-    show(btn.dataset.next);
-    if (btn.dataset.next === "s2") typeText();
+    const nextId = btn.getAttribute("data-next");
+
+    const nextIndex = [...scenes].findIndex(
+      s => s.id === nextId
+    );
+
+    if (nextIndex !== -1) {
+      showScene(nextIndex);
+
+      // trigger typing kalau scene 2
+      if (nextId === "scene-2") {
+        startTyping();
+      }
+    }
   });
 });
 
-// TYPING EFFECT
-function typeText() {
-  if (i < text.length) {
-    document.getElementById("typing").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typeText, 40);
+/* =========================
+   TYPING EFFECT (SMOOTH CINEMATIC)
+========================= */
+const message =
+  "Aku tidak tahu bagaimana semesta bekerja, tapi aku tahu satu hal... kamu adalah bagian terbaik di dalamnya ❤️";
+
+let typingIndex = 0;
+let typingRunning = false;
+
+function startTyping() {
+  typingIndex = 0;
+  typingEl.innerHTML = "";
+  typingRunning = true;
+
+  typeLoop();
+}
+
+function typeLoop() {
+  if (!typingRunning) return;
+
+  if (typingIndex < message.length) {
+    typingEl.innerHTML += message.charAt(typingIndex);
+    typingIndex++;
+
+    setTimeout(typeLoop, 35); // cinematic speed
+  } else {
+    typingRunning = false;
   }
 }
 
-// MUSIC
-musicBtn.onclick = () => {
-  if (music.paused) music.play();
-  else music.pause();
-};
+/* =========================
+   MUSIC CONTROL (SAFE MOBILE)
+========================= */
+musicBtn.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    musicBtn.innerText = "⏸";
+  } else {
+    music.pause();
+    musicBtn.innerText = "🎵";
+  }
+});
 
-// REPLAY
-document.getElementById("replay").onclick = () => {
-  show("s1");
-};
+/* =========================
+   KEYBOARD / TOUCH SAFE (ANTI BUG HP)
+========================= */
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    music.pause();
+  }
+});
+
+/* =========================
+   REPLAY SYSTEM
+========================= */
+document.getElementById("restart")?.addEventListener("click", () => {
+  showScene(0);
+
+  setTimeout(() => {
+    startTyping();
+  }, 800);
+});
+
+/* =========================
+   EXTRA CINEMATIC FEEL (SMALL SHAKE ON SCENE CHANGE)
+========================= */
+function cinematicShake() {
+  document.body.style.transform = "scale(1.01)";
+  setTimeout(() => {
+    document.body.style.transform = "scale(1)";
+  }, 200);
+}
+
+/* hook shake to scene changes */
+function showScene(index) {
+  scenes.forEach(s => s.classList.remove("active"));
+  currentScene = index;
+
+  const target = scenes[index];
+  if (target) {
+    target.classList.add("active");
+  }
+
+  cinematicShake();
+
+  if (typingEl) typingEl.innerHTML = "";
+}
